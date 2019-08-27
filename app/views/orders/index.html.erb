@@ -1,11 +1,41 @@
 <head>
+
   <link rel="stylesheet" href="order.scss">
+
     <div class="container" style="height: 300px">
-     <h1 class = "mb-5 text-center" style="color:  #99a59f"> Quand souhaitez vous récupérer vôtre commande ? </h1>
+     <h1 class = "mb-5 text-center"> Quand souhaitez vous récupérer vôtre commande ? </h1>
     </div>
+
+      <div class="form-group">
+        <label for="inputAddress">Adresse</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="50 rue Vaugirard">
+      </div>
+
+        <div>
+         <tr>
+          <td><label for="date">Date:</label></td>
+          <td><input type="date" value="2014-06-12" /></td>
+          <td><button>Get it</button></td>
+          </tr>
+            <tr>
+            <td><label for="time">Time:</label></td>
+              <td><input type="time" value="08:30" /></td>
+            <td><button>Get it</button></td>
+            </tr>
+        </div>
+
+          <div>
+            <h2 class = "mb-5 text-center" style="color: #727372"> Voici les différents points de retrait à moins de 500 mètres de chez vous ! </h2>
+          </div>
+
+            <div id="map" style="width: 100%; height: 900px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              <img id="map" src='https://api.mapbox.com/[...]?access_token=pk.eyJ1IjoiZ2F1dGhpZXI0NCIsImEiOiJjanpzbDQ4ZzExaTVxM2JwY2I0ODU2Y3hyIn0.hqfzPnGJuHNocEADu4xqaQ'>
+           </div>
+
     <div>
       <a href="..." class="btn btn-primary">Let's go !</a>
     </div>
+
 </head>
 
 
