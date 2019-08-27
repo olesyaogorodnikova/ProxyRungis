@@ -5,6 +5,11 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    if @order.save
+      redirect_to orders_path
+    else
+      render :edit
+    end
   end
 
   def update
