@@ -1,19 +1,19 @@
-<div class="cards-index">
 <h1>1/ Choisis ton panier</h1>
+<div class="cards-index">
   <div class="cards-list" >
     <% @packages.each do |package| %>
-    <%= link_to package_path(package), class: "card-link" do %>
-      <div class="card-product">
-        <%= cl_image_tag package.photo, crop: :fit %>
+      <%= link_to package_path(package), class: "card-link" do %>
+        <div class="card-product">
+          <%= cl_image_tag package.photo, crop: :fit %>
           <div class="card-product-infos">
             <h2><%= package.name %></h2>
             <p><%= package.description %></p>
-              <div class="card-product-price">
-                <h2><%= package.price %>€</h2>
+            <div class="card-product-price">
+              <h2><%= package.price %>€</h2>
             </div>
           </div>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
