@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: :home
 
   def home
-    @cart = Cart.create(user: current_user)
+    Cart.create(user: current_user) if Cart.count == 0
   end
 end

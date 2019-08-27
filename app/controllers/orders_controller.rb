@@ -1,18 +1,18 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.all
-    @orders_geocoded = Order.geocoded
+   # @orders_geocoded = Order.geocoded
 
-    @markers = @orders_geocoded.map do |order|
-      {
-        lat: announce.latitude,
-        lng: announce.longitude
-      }
-    end
+   # @markers = @orders_geocoded.map do |order|
+    #  {
+     #   lat: order.latitude,
+      #  lng: order.longitude
+      #}
+    #end
   end
 
   def new
-    @announce = Announce.new
+    @orders = Order.new
   end
 
   def edit

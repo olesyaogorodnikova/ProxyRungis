@@ -8,12 +8,17 @@
 
         <div>
          <tr>
-          <td><label for="date">Date:</label></td>
+          <td><label for="date">Le:</label></td>
           <td><input type="date" value="2014-06-12" /></td>
           <td><button>Get it</button></td>
           </tr>
             <tr>
-            <td><label for="time">Time:</label></td>
+            <td><label for="time">A partir de :</label></td>
+              <td><input type="time" value="08:30" /></td>
+            <td><button>Get it</button></td>
+            </tr>
+             <tr>
+            <td><label for="time">Jusqu'à:</label></td>
               <td><input type="time" value="08:30" /></td>
             <td><button>Get it</button></td>
             </tr>
@@ -21,7 +26,7 @@
 
           <div class="form-group">
             <label for="inputAddress">Adresse</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="50 rue Vaugirard">
+            <input type="text" class="form-control" id="inputAddress" placeholder="11 rue oberkampf">
           </div>
 
            <div>
@@ -33,13 +38,14 @@
                 style="width: 100%;
                 height: 600px;"
                 data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['pk.eyJ1IjoiZ2F1dGhpZXI0NCIsImEiOiJjanpzbDQ4ZzExaTVxM2JwY2I0ODU2Y3hyIn0.hqfzPnGJuHNocEADu4xqaQ'] %>">
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
              </div>
 
     <div>
-      <a href="..." class="btn btn-primary">Let's go !</a>
+      <%= simple_form_for [@order] do |f| %>
+      <%= f.submit "Let's Go !", class: "btn btn-primary" %>
+      <% end %>
     </div>
-
 </head>
 
 
