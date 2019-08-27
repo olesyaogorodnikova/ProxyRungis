@@ -6,5 +6,8 @@ class PackagesController < ApplicationController
 
   def show
     @package = Package.find(params[:id])
+    @cart_item = CartItem.new
+    # le .new n'inclut pas le save donc on peut instancier une coquille vide
   end
 end
+

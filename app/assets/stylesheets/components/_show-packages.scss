@@ -12,3 +12,23 @@
 #back-index-show-packages {
 
 }
+
+#quantity-form-button {
+  display: inline-block;
+  position: relative;
+
+}
+
+#button-close {
+  position: absolute;
+  right: 35px;
+  bottom: 16px;
+
+
+}
+
+.main-div-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
