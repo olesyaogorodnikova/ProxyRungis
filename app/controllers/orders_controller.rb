@@ -21,8 +21,9 @@ class OrdersController < ApplicationController
     end
   end
 
-  def new
-    @orders = Order.new
+
+  def show
+    @order = current_user.orders.find(params[:id])
   end
 
   def edit
@@ -34,9 +35,14 @@ class OrdersController < ApplicationController
     end
   end
 
+  def create
+
+  end
+
   def update
     @order = Order.find(params[:id])
     @order.update(params[:order])
     redirect_to orders_path
   end
+
 end
