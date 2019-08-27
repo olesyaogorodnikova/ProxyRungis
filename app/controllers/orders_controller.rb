@@ -1,6 +1,13 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.all
+    @orders = Order.geocoded
+    @markers = @orders.map do |order|
+      {
+        lat: order.latitude,
+        lng: order.longitude
+      }
+    end
   end
 
   def show

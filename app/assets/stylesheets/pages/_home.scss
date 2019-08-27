@@ -1,9 +1,4 @@
 // Specific CSS for your home-page
-body {
-  text-align: center;
-
-}
-
 mark {
   background-color: yellow;
   color: black;
@@ -13,6 +8,7 @@ mark {
   background-size: cover;
   background-position: center;
   padding: 200px 0;
+  text-align: center;
 }
 
 .banner h1 {
@@ -28,4 +24,12 @@ mark {
   color: white;
   opacity: 0.5;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.content {
+  text-align: center;
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
 }
