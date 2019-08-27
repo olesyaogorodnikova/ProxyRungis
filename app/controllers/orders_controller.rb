@@ -11,6 +11,16 @@ class OrdersController < ApplicationController
     #end
   end
 
+  def create
+    @order = Order.new(order_params)
+    @order.user = current_user
+    if @order.save
+      redirect_to order_path
+    else
+      render 'new'
+    end
+  end
+
   def new
     @orders = Order.new
   end

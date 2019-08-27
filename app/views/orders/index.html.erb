@@ -10,17 +10,17 @@
          <tr>
           <td><label for="date">Le:</label></td>
           <td><input type="date" value="2014-06-12" /></td>
-          <td><button>Get it</button></td>
+          <td><button>Valider</button></td>
           </tr>
             <tr>
             <td><label for="time">A partir de :</label></td>
               <td><input type="time" value="08:30" /></td>
-            <td><button>Get it</button></td>
+            <td><button>Valider</button></td>
             </tr>
              <tr>
             <td><label for="time">Jusqu'à:</label></td>
               <td><input type="time" value="08:30" /></td>
-            <td><button>Get it</button></td>
+            <td><button>Valider</button></td>
             </tr>
         </div>
 
@@ -42,10 +42,9 @@
              </div>
 
     <div>
-      <%= simple_form_for [@order] do |f| %>
-      <%= f.submit "Let's Go !", class: "btn btn-primary" %>
-      <% end %>
+       <div> <%= link_to "Let's Go !", orders_path, class: "btn btn-primary btn-lg btn-flat p-3  pl-5 pr-5 font-weight-bold" %></div>
     </div>
+
 </head>
 
 
