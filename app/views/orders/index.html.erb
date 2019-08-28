@@ -2,29 +2,37 @@
 
   <link rel="stylesheet" href="order.scss">
 
-    <div class="container" style="height: 300px">
+    <div id="container1" class="container" style="height: 300px">
      <h1 class = "mb-5 text-center"> Quand souhaitez vous récupérer vôtre commande ? </h1>
     </div>
 
-        <div>
-         <tr>
-          <td><label for="date">Le:</label></td>
-          <td><input type="date" value="2014-06-12" /></td>
-          <td><button>Valider</button></td>
-          </tr>
+        <div id="container2" class="container">
+          <div class="row">
             <tr>
-            <td><label for="time">A partir de :</label></td>
-              <td><input type="time" value="08:30" /></td>
-            <td><button>Valider</button></td>
+              <td><label for="date">Le:</label></td>
+              <td><input type="date" value="2014-06-12" /></td>
+              <td><button>Valider</button></td>
             </tr>
-             <tr>
-            <td><label for="time">Jusqu'à:</label></td>
+          </div>
+
+            <div class="row">
+              <tr>
+                <td><label for="time">A partir de :</label></td>
+                <td><input type="time" value="08:30" /></td>
+                <td><button>Valider</button></td>
+              </tr>
+            </div>
+
+          <div class="row">
+            <tr>
+              <td><label for="time">Jusqu'à:</label></td>
               <td><input type="time" value="08:30" /></td>
-            <td><button>Valider</button></td>
+              <td><button>Valider</button></td>
             </tr>
+          </div>
         </div>
 
-          <div class="form-group">
+          <div id="address" class="form-group">
             <label for="inputAddress">Adresse</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="11 rue oberkampf">
           </div>
@@ -42,7 +50,7 @@
              </div>
 
     <div>
-       <div> <%= link_to "Let's Go !", orders_path, class: "btn btn-primary btn-lg btn-flat p-3  pl-5 pr-5 font-weight-bold" %></div>
+       <div id="button2"> <%= link_to "Let's Go !", orders_path, class: "btn btn-primary btn-lg btn-flat p-3  pl-5 pr-5 font-weight-bold" %></div>
     </div>
 
 </head>
