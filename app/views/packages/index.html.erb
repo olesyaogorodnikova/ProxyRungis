@@ -11,7 +11,7 @@
           <% @packages.each do |package| %>
 
              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="exampleModal-<%= package.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -43,8 +43,8 @@
                   <p><%= package.description %></p>
                 </div>
                 <!-- Button trigger modal -->
-                <div class="card-package-button-details">
-                  <button type="button" class="btn btn-primary btn-sm" id="card-package-button-details" data-toggle="modal" data-target="#exampleModal">Details</button>
+                <div class="card-package-button-details ">
+                  <button type="button" class="btn btn-primary btn-sm" id="card-package-button-details" data-toggle="modal" data-target="#exampleModal-<%= package.id%>">Details</button>
                   <div class="card-product-price">
                     <h2 class="text-center"><%= package.price %>€</h2>
                   </div>
@@ -53,8 +53,36 @@
           <% end %>
         </div>
 
-      <div class="col-md-6">
-        <p>Test</p>
+      <div class="col-md-4" id="cart-table">
+        <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+              <h4 class="text-center">Votre panier en cours:</h4>
+              <br>
+              <th scope="col"></th>
+              <th scope="col">Nom du panier</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Prix unitaire</th>
+              <th scope="col">Total</th>
+              </tr>
+            </thead>
+              <% total_price = 0 %>
+              <% current_user.cart.cart_items.each_with_index do |cart_item, index| %>
+            <tbody>
+              <tr>
+              <th scope="row"><%= index +1 %></th>
+              <td> <%= cart_item.package.name %></td>
+              <td><%= cart_item.quantity  %></td>
+              <td><%= cart_item.package.price %> €</td>
+               <% price_per_panier = cart_item.package.price * cart_item.quantity %>
+              <td><%= price_per_panier %> €</td>
+              </tr>
+              <% total_price += price_per_panier %>
+              <% end %>
+           </tbody>
+          </table>
+          <h5 class="text-right">Total: <%= total_price %> €</h5>
+
       </div>
 
     </div>
