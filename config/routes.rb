@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :orders, only: [:create, :show, :index, :edit] do
     resources :payments, only: [:new, :create]
+      resources :restaurants
   end
 
 end
