@@ -1,14 +1,6 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.all
-   # @orders_geocoded = Order.geocoded
-
-   # @markers = @orders_geocoded.map do |order|
-    #  {
-     #   lat: order.latitude,
-      #  lng: order.longitude
-      #}
-    #end
   end
 
   def create
@@ -20,7 +12,6 @@ class OrdersController < ApplicationController
       render 'new'
     end
   end
-
 
   def show
     @order = current_user.orders.find(params[:id])
@@ -34,15 +25,4 @@ class OrdersController < ApplicationController
       render :edit
     end
   end
-
-  def create
-
-  end
-
-  def update
-    @order = Order.find(params[:id])
-    @order.update(params[:order])
-    redirect_to orders_path
-  end
-
 end
