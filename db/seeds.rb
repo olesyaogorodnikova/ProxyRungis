@@ -9,6 +9,8 @@ puts "Starting seed"
 Restaurant.destroy_all
 Package.destroy_all
 User.destroy_all
+Order.destroy_all
+
 
 
 User.create!(

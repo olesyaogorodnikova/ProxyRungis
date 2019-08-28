@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   def index
     @orders = Order.all
   end
@@ -7,7 +8,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     if @order.save
-      redirect_to order_path
+      redirect_to edit_order_path(@order)
     else
       render 'new'
     end
@@ -19,10 +20,10 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
-    if @order.save
-      redirect_to orders_path
-    else
-      render :edit
-    end
+    # if @order.save
+    #   redirect_to orders_path
+    # else
+    #   render :edit
+    # end
   end
 end
