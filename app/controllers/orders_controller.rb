@@ -5,9 +5,11 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # todo: implementer la methode order_params
     @order = Order.new(order_params)
     @order.user = current_user
     if @order.save
+
       redirect_to edit_order_path(@order)
     else
       render 'new'
