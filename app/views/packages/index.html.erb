@@ -5,8 +5,6 @@
 <div class="cards-index">
     <div class="row" >
 
-
-
         <div class="col-md-6" >
           <% @packages.each do |package| %>
 
@@ -54,7 +52,7 @@
         </div>
 
       <div class="col-md-4" id="cart-table">
-        <table class="table table-bordered text-center">
+        <table class="table table text-center">
             <thead>
               <tr>
               <h4 class="text-center">Votre panier en cours:</h4>
@@ -67,22 +65,27 @@
               </tr>
             </thead>
               <% total_price = 0 %>
-              <% current_user.cart.cart_items.each_with_index do |cart_item, index| %>
+              <% current_user.cart.cart_items.each do |cart_item| %>
             <tbody>
               <tr>
-              <th scope="row"><%= index +1 %></th>
+              <td></td>
               <td> <%= cart_item.package.name %></td>
               <td><%= cart_item.quantity  %></td>
               <td><%= cart_item.package.price %> €</td>
                <% price_per_panier = cart_item.package.price * cart_item.quantity %>
               <td><%= price_per_panier %> €</td>
+              <td><%= link_to cart_item_path(cart_item), method: :delete, data: { confirm: "Confirmez-vous cette suppression ?" } do %>
+                  <i class="fa fa-trash destroy_package_cart_item"></i></td>
+                  <% end %>
               </tr>
               <% total_price += price_per_panier %>
               <% end %>
            </tbody>
           </table>
           <h5 class="text-right">Total: <%= total_price %> €</h5>
-
+          <div class="validation-cart">
+            <%= link_to "Valider", orders_path, method: :post, class: "btn btn-primary btn-sm" %>
+          </div>
       </div>
 
     </div>

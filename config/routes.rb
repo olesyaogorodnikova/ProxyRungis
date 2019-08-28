@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :packages do
     resources :cart_items, only: :create
   end
-  resources :orders, only: [:show, :index] do
+
+  resources :cart_items, only: :destroy
+
+  resources :orders, only: [:show, :index, :create] do
     resources :payments, only: [:new, :create]
       resources :restaurants
   end
