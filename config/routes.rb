@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
   resources :packages
-  resources :orders, only: [:show] do
+  resources :orders, only: [:show, :index] do
     resources :payments, only: [:new, :create]
 
   end
