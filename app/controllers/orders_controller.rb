@@ -16,4 +16,13 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
   end
+
+  def edit
+    @order = Order.find(params[:id])
+    if @order.save
+      redirect_to orders_path
+    else
+      render :edit
+    end
+  end
 end
