@@ -1,65 +1,56 @@
-
-
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+<div class="cards-index">
+   <div class="row" >
+<div class="col-md-6" >
 <%= form_tag order_payments_path(@order) do %>
-
-
-<h2 class ="text-center">Purchasing <%= @order.package_sku %></h2>
-<div class="container">
-  <table id="cart" class="table table-hover table-condensed">
-            <thead>
-            <tr>
-              <th style="width:50%">Product</th>
-              <th style="width:10%">Price</th>
-              <th style="width:12%">Quantity</th>
-              <th style="width:10%"></th>
-            </tr>
-          </thead>
-          <tbody>
-           <% current_user.cart.cart_items.each do |item| %>
-
-            <tr>
-              <td data-th="Product">
-                <div class="row">
-                    <div class="col-sm-2 hidden-xs"><%= cl_image_tag item.package.photo, class: "img-responsive" %></div>
-                    <div class="col-sm-10">
-                      <h4 class="nomargin"><%= item.package.name%></h4>
-                      <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-                    </div>
-                  </div>
-                  </td>
-                  <td data-th="Price"><%= item.package.price%> €</td>
-                  <td data-th="Quantity"><%= item.quantity%>
-                  </td>
-
-                  <td class="actions" data-th="">
-                   <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-
-                </div>
-                </td>
-            </tr>
-            <% end %>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-
-              <td class="hidden-xs text-center"><strong>Total: <%= humanized_money_with_symbol(@order.amount) %></strong></td>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-name="My Purchase"
-                  data-email="<%= current_user.email %>"
-                  data-description="Basket <%= current_user.cart.id %>"
-                  data-amount="<%= @order.amount_cents %>"
-                  data-currency="<%= @order.amount.currency %>">
-                </script>
+<h3 class ="offset-5"><strong>Check-Out <%= @order.package_sku %></strong></h3>
+<div class="container", style="width:750px">
+ <table id="cart" class="table table-hover ">
+           <thead>
+           <tr>
+             <th style="width:40%"><h4>Product</h4></th>
+             <th style="width:11%"><h4>Price</h4></th>
+             <th style="width:3%"></th>
+           </tr>
+         </thead>
+         <tbody>
+          <% current_user.cart.cart_items.each do |item| %>
+           <tr>
+             <td data-th="Product">
+               <div class="row">
+                   <div class="col-sm-2 hidden-xs"><%= cl_image_tag item.package.photo, class: "img-responsive" %></div>
+                   <div class="col-sm-10">
+                     <h4 class=""><%= item.package.name%></h4>
+                     <p><%= item.package.description%></p>
+                   </div>
+                 </div>
+                 </td>
+                 <td data-th="Price"><%= item.package.price%> €</td>
+               </div>
+               </td>
              </tr>
-          </tfoot>
-        </table>
+           <% end %>
+         </tbody>
+         <tfoot>
+           <tr>
+             <td><%= link_to "Continue Shopping", packages_path, class: "btn btn-warning" %></td>
+             <td class="hidden-xs"><strong>TOTAL: <%= humanized_money_with_symbol(@order.amount) %></strong></td>
+               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                 data-name="My Purchase"
+                 data-email="<%= current_user.email %>"
+                 data-description="Basket <%= current_user.cart.id %>"
+                 data-amount="<%= @order.amount_cents %>"
+                 data-currency="<%= @order.amount.currency %>">
+               </script>
+            </tr>
+         </tfoot>
+       </table>
 </div>
-
 <% end %>
-
+</div>
+<div class="col-md-4" id="cart-table">
+    <h4>Vous serez livré à moins de 500m de : <%= @order.address %> #address le #date entre #horraire start et le #horraire end</h4>
+</div>
+   </div>
+</div>
