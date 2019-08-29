@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-  def idex
+
+  def index
     @restaurants = Restaurant.all
   end
 
