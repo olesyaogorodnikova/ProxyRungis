@@ -15,10 +15,10 @@ class OrdersController < ApplicationController
   end
 
   def update
-   @order = Order.find(params[:id])
-   @order.update(order_params)
-   redirect_to new_order_payment_path(@order)
- end
+    @order = Order.find(params[:id])
+    @order.update(order_params)
+    redirect_to new_order_payment_path(@order)
+  end
 
   def show
     @order = current_user.orders.find(params[:id])
@@ -41,6 +41,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-   params.require(:order).permit(:status, :day, :time_start, :time_end, :address)
+    params.require(:order).permit(:status, :day, :time_start, :time_end, :address)
  end
 end
