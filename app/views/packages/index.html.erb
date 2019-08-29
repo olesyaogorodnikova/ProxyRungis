@@ -84,7 +84,7 @@
           </table>
           <h5 class="text-right">Total: <%= total_price %> €</h5>
           <div class="validation-cart">
-            <%= link_to "Valider", orders_path, method: :post, class: "btn btn-primary btn-sm" %>
+            <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-primary btn-sm" %>
           </div>
       </div>
 

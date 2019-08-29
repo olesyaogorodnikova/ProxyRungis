@@ -7,8 +7,9 @@
     <h2>Entre la date à laquelle tu veux récupérer ton panier:</h2>
 
     <%= simple_form_for @order, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :day, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :time_start, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :time_end, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.button :submit, "Go", class: "btn btn-primary" %>
     <% end %>
   </div>
