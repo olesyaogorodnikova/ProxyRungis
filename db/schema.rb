@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_135307) do
+ActiveRecord::Schema.define(version: 2019_08_29_123904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,14 +44,10 @@ ActiveRecord::Schema.define(version: 2019_08_28_135307) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.string "state"
-    t.string "package_sku"
     t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
-    t.bigint "user_id"
     t.index ["cart_id"], name: "index_orders_on_cart_id"
     t.index ["restaurant_id"], name: "index_orders_on_restaurant_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "packages", force: :cascade do |t|
@@ -73,6 +69,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_135307) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "users", force: :cascade do |t|
