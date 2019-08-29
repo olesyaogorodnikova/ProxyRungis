@@ -1,5 +1,24 @@
 
-<h1>1/ Choisis ton panier</h1>
+
+<div class="container">
+  <h1>1/ Choisis ton panier</h1>
+
+
+
+    <form action="/packages" method="get" id="packages-choices">
+          <select name="category" class="custom-select my-1 mr-sm-2">
+            <option value="" disabled selected>Fruits, légumes...ou les 2</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Legumes">Légumes</option>
+            <option value="Fruits & Legumes">Fruits & légumes</option>
+          </select>
+          <input type="checkbox" name="bio" value=true>
+          <label for="customCheck1">Bio</label>
+       <button type="submit" class="btn btn-primary my-1 bt-sm">Valider</button>
+    </form>
+
+
+</div>
 
 
 <div class="cards-index">

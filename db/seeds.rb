@@ -67,18 +67,22 @@ a.save
 puts 'b'
 
 b = Package.new(
-    name: "Family basket",
-    description: "Fresh vegetables busket for the family",
-    price: 40
+    name: "Légumes de l'été - Région du Roussillon",
+    description: "8 tomates coeur de boeuf, 4 courgettes vertes, 2 salades batavia, 3 ognions doux",
+    price: 40,
+    category: "Legumes",
+    bio: true
         )
 b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1566827389/vegetable_basket_6_dcjsuu.jpg"
 b.save
 
 
 b = Package.new(
-    name: "Summer basket",
-    description: "Fresh vegetables busket, summer selection",
-    price: 30
+    name: "Fruits de l'été - Région Aquitaine",
+    description: "10 nectarines blanches, 5 melons jaunes, 10 figues rondes, 125g de framboises",
+    price: 30,
+    category: "Fruits",
+    bio: false
         )
 
 b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1566825251/vegetable_basket_3_jh8cxd.jpg"
@@ -86,9 +90,11 @@ b.save
 
 
 b = Package.new(
-    name: "Autumn basket",
-    description: "Fresh vegetables busket, autumn selection",
-    price: 20
+    name: "Panaché de fruits et légumes bio - Région charentaise",
+    description: "10 nectarines blanches, 5 melons jaunes, 8 tomates coeur de boeuf, 4 courgettes vertes",
+    price: 30,
+    category: "Fruits & Legumes",
+    bio: true
         )
 
 b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1566825252/vegetable_basket_4_mebqqz.jpg"
