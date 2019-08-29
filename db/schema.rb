@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_123904) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
+    t.string "category"
+    t.boolean "bio"
   end
 
   create_table "restaurants", force: :cascade do |t|

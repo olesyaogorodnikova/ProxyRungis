@@ -33,4 +33,28 @@
   grid-gap: 16px;
 }
 
+#packages-choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-content: space-between;
+  margin: -4px;
+  select {
+    width: 18vw;
+  }
+  button {
+    margin: 13px;
+  }
+  input {
+    margin-top: 17px;
+  }
+  label {
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+}
 
+// #checkbox-bio {
+// padding-left: 10px;
+
+// }

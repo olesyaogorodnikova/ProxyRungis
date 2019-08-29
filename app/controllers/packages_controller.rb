@@ -3,8 +3,15 @@ class PackagesController < ApplicationController
   def index
     @packages = Package.all
     @cart_item = CartItem.new
-  end
+    if params[:category]
+      @packages = Package.where(category: params[:category])
 
+    end
+    if params[:bio]
+      @packages = @packages.search_by_bio(true)
+    end
+
+  end
   # def show
   #   @package = Package.find(params[:id])
   #   @cart_item = CartItem.new
