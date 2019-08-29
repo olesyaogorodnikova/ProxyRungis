@@ -1,36 +1,206 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dhf3phkaa/image/upload/v1566827389/fruit_basket_dfayvi.webp);" id="caroussel">
-  <div class="container" style="height: 200px">
-    <h1>Proxy Rungis</h1>
-    <p>
-      <strong>Des fruits et légumes de qualité, pas cher, juste en bas de chez toi !</strong>
-    </p>
-    <div class="btn btn-success"> <%= link_to "Voir nos produits", packages_path %></div>
-  </div>
-</div>
-<div class ="container" class="content">
-  <br>
-  <h2>Manger des fruits et légumes frais n'a jamais été aussi <strong class="mark">simple !</strong></h2>
-  <h3>Des fruits et légumes <strong class="mark">de qualité, pas cher, juste en bas de chez toi !</strong></h3>
-  <br>
-    <p>1) Je choisis mon panier de saison.</p>
-    <p>2) J'indique où j'habite, et quand je veux récupérer le panier.</p>
-    <p>3) Je récupère mon panier frais à l'endroit convenu.</p>
-  <h2>C'est le bon plan <strong class="mark">rapide et sans prise de tête.</strong></h2>
-  <h3 style="text-decoration: underline;">Qui sommes-nous ?</h3>
-  <h4>Nous sommes 4 développeurs parisiens en quête de fruits et légumes de qualité.</h4>
-  <h5><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>  Gauthier :</h5>
-  <h5><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>  Christophe :</h5>
-  <h5><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %> Oleska :</h5>
-  <h5><%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %> Quentin :</h5>
 
-  <h3 style="text-decoration: underline;">Nôtre mission :</h3>
-  <p>
-    Nôtre mission, c'est de vous proposer des fruits et légumes toujours meilleurs, toujours moins cher et toujours plus proche de chez vous.
-  </p>
-  <h3 style="text-decoration: underline;">Nôtre astuce :</h3>
-  <p>On à remarqué que ce qui coûte cher dans l'alimentaire, c'est le transport et le stockage.<br>Grâce à une solution innovante et technologique nous pouvons réduire ses coûts de manière à se focaliser sur la qualité des aliments.<a href="#">En savoir plus.</a></p>
-  <button type="button" class="btn btn-success">Voir nos produits</button>
-  <button type="button" class="btn btn-primary">Qui sommes-nous</button>
-  <img src=""> <!-- Ici on va ajouter le caroussel -->
-  </div>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+   <div class="carousel-inner div-text-carrousel">
+    <div class="text-center text-carrousel">
+      <h1><strong>Proxy Rungis</strong></h1>
+      <br>
+      <h3>
+        <br>
+        <strong>Des fruits et légumes de qualité, pas cher, juste en bas de chez toi!</strong>
+      </h3>
+      <br>
+      <br>
+      <br>
+      <div class="btn btn-success btn-lg btn-flat p-3 mt-5"> <%= link_to "VOIR NOS PRODUITS", packages_path %></div>
+    </div>
+
+
+     <div class="carousel-item active">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= cl_image_path'vegetables_assort_meiitm.jpg', height: 600, width: 1200, crop: :fill %>')">
+       </div>
+     </div>
+     <div class="carousel-item">
+       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path'ont5vs0mos0zbyhbkzi6.jpg', height: 600, width: 1200, crop: :fill %>')">
+
+       </div>
+     </div>
+     <div class="carousel-item">
+       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path'sogf4wdf6efidnfa5cki.jpg', height: 600, width: 1200, crop: :fill %>')">
+       </div>
+     </div>
+   </div>
 </div>
+
+
+<div class ="container mt-5 center">
+  <br>
+  <h2 style="color: #496206">Manger des fruits et légumes frais n'a jamais été aussi <strong>simple !</strong> </h2>
+  <h3>Des fruits et légumes <strong>de qualité, pas cher, juste en bas de chez toi !</strong></h3>
+  <br>
+  <br>
+   <div class = "offset-1">
+    <h3>1) <strong>Je choisis </strong>mon panier de saison.</h3>
+    <br>
+    <h3>2) <strong>J'indique</strong> où j'habite, et quand je veux récupérer le panier.</h3>
+    <br>
+    <h3><strong>3) <strong>Je récupère </strong> mon panier frais à l'endroit convenu.</strong></h3>
+   </div>
+  <br>
+
+
+
+<br>
+  <br>
+  <h2>C'est le bon plan <strong>rapide et sans prise de tête.</strong></h2>
+  <br>
+  <br>
+<br>
+
+<div class = "offset-3">
+  <i class="fas fa-carrot mr-5" style='font-size:48px'></i>
+  <i class="fas fa-plus mr-5" style='font-size:48px'></i>
+
+  <i class='fas fa-truck mr-5' style='font-size:48px'></i>
+
+  <i class='fas fa-equals mr-5' style='font-size:48px'></i>
+
+  <i class="fas fa-shopping-cart mr-5" style='font-size:48px'></i>
+   <br>
+<br>
+</div>
+
+  <br>
+  <br>
+  <h2 style="color: #496206"><ins><strong>Qui sommes-nous ?</strong></ins></h2>
+
+  <br>
+  <h3>Nous sommes 4 développeurs parisiens en quête de fruits et légumes de qualité.</h3>
+  <br>
+  <br>
+
+  </div>
+
+
+  <div class ="container mt-5">
+    <!-- Grid row -->
+  <div class="row">
+    <!--Grid column-->
+    <div class="col-lg-3 col-md-12 mb-lg-0 mb-4">
+      <!--Card-->
+      <div class="card testimonial-card">
+        <!--Background color-->
+        <div class="card-up info-color card-person">
+        <!--Avatar-->
+      <div class="avatar-largee mx-auto white mt-2">
+          <%= cl_image_tag("legumes_de_france_ipkiul.png", class: "rounded-circle img-fluid")%>
+
+
+        </div></div>
+        <div class="card-body mt-3">
+          <!--Name-->
+          <h4 class="font-weight-bold mb-4 text-center">Christophe B.</h4>
+          <hr>
+          <!--Quotation-->
+          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet eos
+            adipisci, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!--Card-->
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
+      <!--Card-->
+      <div class="card testimonial-card">
+        <!--Background color-->
+        <div class="card-up blue-gradient card-person">
+
+        <!--Avatar-->
+        <div class="avatar-largee mx-auto white mt-2">
+          <%= cl_image_tag("legumes_de_france_ipkiul.png", class: "rounded-circle img-fluid")%>
+
+        </div></div>
+        <div class="card-body mt-3">
+          <!--Name-->
+          <h4 class="font-weight-bold mb-4 text-center">  Gauthier H.</h4>
+          <hr>
+          <!--Quotation-->
+          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Neque cupiditate assumenda in
+            maiores repudiandae mollitia architecto.</p>
+        </div>
+      </div>
+      <!--Card-->
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
+      <!--Card-->
+      <div class="card testimonial-card">
+        <!--Background color-->
+        <div class="card-up blue-gradient card-person">
+
+        <!--Avatar-->
+        <div class="avatar-largee mx-auto white mt-2">
+          <%= cl_image_tag("legumes_de_france_ipkiul.png", class: "rounded-circle img-fluid")%>
+
+        </div></div>
+        <div class="card-body mt-3">
+          <!--Name-->
+          <h4 class="font-weight-bold mb-4 text-center">Quentin D.</h4>
+          <hr>
+          <!--Quotation-->
+          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Neque cupiditate assumenda in
+            maiores repudiandae mollitia architecto.</p>
+        </div>
+      </div>
+      <!--Card-->
+    </div>
+    <!--Grid column-->
+    <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
+      <!--Card-->
+      <div class="card testimonial-card">
+        <!--Background color-->
+        <div class="card-up blue-gradient card-person">
+
+        <!--Avatar-->
+        <div class="avatar-largee mx-auto white mt-2">
+          <%= cl_image_tag("legumes_de_france_ipkiul.png", class: "rounded-circle img-fluid")%>
+
+        </div></div>
+        <div class="card-body mt-3">
+          <!--Name-->
+          <h4 class="font-weight-bold mb-4 text-center">Olesya O.</h4>
+          <hr>
+          <!--Quotation-->
+          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Neque cupiditate assumenda in
+            maiores repudiandae mollitia architecto.</p>
+        </div>
+      </div>
+      <!--Card-->
+    </div>
+  </div>
+  </div>
+  <!-- Grid row -->
+  <br>
+  <br>
+  <div class ="container mt-3">
+  <h2 style="color: #496206"><ins><strong>Nôtre mission :</strong></ins></h2>
+  <br>
+  <h3>
+    Nôtre mission, c'est de vous proposer des fruits et légumes toujours meilleurs, toujours moins cher et toujours plus proche de chez vous.
+  </h3>
+ <br>
+  <h2 style="color: #496206"><ins><strong>Nôtre astuce :</strong></ins></h2>
+  <br>
+  <h3>On à remarqué que ce qui coûte cher dans l'alimentaire, c'est le transport et le stockage.<br>Grâce à une solution innovante et technologique nous pouvons réduire ses coûts de manière à se focaliser sur la qualité des aliments. <a href="#">En savoir plus.</a></h3>
+  </div>
+  <br>
+  <br>
+
+
+
+
+

@@ -1,8 +1,8 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
-  text-align: center;
+  padding: 150px 0;
+  height:500px;
 }
 
 .banner h1 {
@@ -14,8 +14,29 @@
 }
 
 .banner p {
-  font-size: 30px;
+  font-size: 20px;
   color: white;
-  opacity: 0.5;
+  opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.div-text-carrousel {
+  position:relative;
+  height:500px;
+  width: 100%;
+}
+
+.text-carrousel {
+  position: absolute;
+  z-index: 10000;
+  height:500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  h1 {
+    color: white;
+  }
 }

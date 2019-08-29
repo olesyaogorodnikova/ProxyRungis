@@ -46,3 +46,28 @@
 .card-package-button-details {
 
 }
+
+.card-category {
+  background-size: cover;
+
+  background: rgba(76, 175, 80, 0.5);
+  background-position: center;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.card-category p{
+  color: black;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+}

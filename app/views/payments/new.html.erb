@@ -1,4 +1,4 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <div class="cards-index">
    <div class="row" >
 <div class="col-md-6" >
@@ -18,7 +18,7 @@
            <tr>
              <td data-th="Product">
                <div class="row">
-                   <div class="col-sm-2 hidden-xs"><%= cl_image_tag item.package.photo, class: "img-responsive" %></div>
+                   <div class="col-sm-2 hidden-xs"><%= cl_image_tag item.package.photo, height: 40 %></div>
                    <div class="col-sm-10">
                      <h4 class=""><%= item.package.name%></h4>
                      <p><%= item.package.description%></p>
@@ -49,8 +49,14 @@
 </div>
 <% end %>
 </div>
-<div class="col-md-4" id="cart-table">
-    <h4>Vous serez livré à moins de 500m de : <%= @order.address %> #address le #date entre #horraire start et le #horraire end</h4>
+<div class="col-md-4 mt-5" id="cart-table">
+  <div class="card-category" style="background-image: linear-gradient(rgba(200,200,200,0.7), rgba(210,210,210,0.8)), url('<%=  cl_image_path'fruit_basket_dfayvi.webp' %>');">
+
+      <p> Vous serez livré à moins de 500m de : <%= @order.address %> #address le <%= @order.day %>#date entre <%= @order.time_start %>#horraire start et le <%= @order.time_end %>#horraire end </p>
+
+  </div>
+
+
 </div>
    </div>
 </div>
