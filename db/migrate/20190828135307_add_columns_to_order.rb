@@ -6,5 +6,7 @@ class AddColumnsToOrder < ActiveRecord::Migration[5.2]
     add_column :orders, :address, :string
     add_column :orders, :latitude, :float
     add_column :orders, :longitude, :float
+    add_monetize :orders, :amount, currency: { present: false }
+    add_column :orders, :payment, :jsonb
   end
 end

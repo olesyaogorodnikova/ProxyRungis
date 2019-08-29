@@ -1,7 +1,14 @@
-
-<h1>Order</h1>
-<ul>
-  <li>Status: <%= @order.state %></li>
-  <li>Item: <%= @order.package_sku %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
-<ul>
+<div class="jumbotron text-center contener">
+  <h1 class="display-3">Merci!</h1>
+  <h1> Votre commande est validée!</h1>
+  <h3>Status: <strong style="color: green"><%= @order.status %></strong></h3>
+  <h3>Amount: <%= humanized_money_with_symbol(@order.amount) %></h3>
+  <br>
+  <p class="lead"><strong>Vous allez recevoir par email le détail de votre commande</strong></p>
+  <br>
+  <p>
+    Having trouble? <a href="">Contact us</a>
+  </p>
+  <p class="lead"><%= link_to "Continue Shopping", packages_path, class: "btn btn-warning" %>
+  </p>
+</div>
