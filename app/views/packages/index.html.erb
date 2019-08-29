@@ -40,7 +40,11 @@
 
                     <div class="modal-body text-center">
                       <h3 class="modal-title" id="exampleModalLabel"> <%= package.name %></h3>
-                      <p class="modal-title" id="exampleModalLabel"> <%= package.description %></p>
+                      <% products = package.description.split(",") %>
+                      <% products.each do |product|%>
+                      <p class="modal-title" id="exampleModalLabel">- <%= product %></p>
+                      <% end %>
+                      <br>
                       <h3 class="modal-title" id="exampleModalLabel"> <%= package.price %>€</h3>
                     </div>
                     <div class="modal-footer" id="quantity-form-button">
