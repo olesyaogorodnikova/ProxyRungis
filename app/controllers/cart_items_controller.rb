@@ -8,22 +8,11 @@ class CartItemsController < ApplicationController
 
   def create
     @package = Package.find(params[:package_id])
-    raise
-    if current_user.cart.cart_items.map { |ci| ci.package }.include? (@package)
-    # current_user.cart.cart_items.map { |ci| ci.package }.include? @package
-    # current_user.cart.cart_items.map(&:package).include? @package
-    # tu regardes si ton user a des cart items
-    # if current_user.cart.cart_items.any?
-    #   # s'il en a tu iteres dessus et tu regardes pour chacun si le package id du cart item est le meme
-    #   current_user.cart.cart_items.each do |cart_item|
-    #     if cart_item.package == @package
-          # que @package
-          # si jamais il existe deja, tu chopes le cart item et le update avec params quantty
-          ci.quantity += cart_item_params[:quantity].to_i
-          ci.save
-          # si il existe pas
+    if current_user.cart.cart_items.map { |ci| ci.package }.include?(@package)
+      @cart_item = current_user.cart.cart_items.find_by(package_id: @package.id)
+          @cart_item.quantity += cart_item_params[:quantity].to_i
+          @cart_item.save
         else
-          # sil en a pas tu fais ton truc ci dessous
         @cart_item = CartItem.new(cart_item_params)
         @cart_item.package = @package
         @cart_item.cart = current_user.cart || Cart.new(user: current_user)
