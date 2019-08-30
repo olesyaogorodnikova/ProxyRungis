@@ -1,15 +1,16 @@
-#cart-table {
+#cart-table-packages {
   background-color: white;
   padding: 12px;
   font-size: 12px;
   padding-left: 0px;
+  height: 500px;
 }
 
-#cart-table h4 {
+#cart-table-packages h4 {
   font-size: 16px;
 }
 
-#cart-table h5 {
+#cart-table-packages h5 {
   font-size: 14px;
 }
 
@@ -26,3 +27,6 @@
 }
 
 
+#label-bio {
+  padding-left: 0;
+}
