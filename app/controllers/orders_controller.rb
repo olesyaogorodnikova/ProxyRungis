@@ -7,6 +7,11 @@ class OrdersController < ApplicationController
     # todo: implementer la methode order_params
     cart = Cart.find(params[:cart])
     @order = Order.new(cart: cart)
+    sum = 0
+    cart.cart_items.each do |a|
+      sum += a.package.price_cents
+    end
+    @order.amount_cents = sum / 100
     if @order.save
       redirect_to edit_order_path(@order)
     else

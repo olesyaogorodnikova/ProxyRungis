@@ -34,7 +34,7 @@
          <tfoot>
            <tr>
              <td><%= link_to "Continue Shopping", packages_path, class: "btn btn-warning" %></td>
-             <td class="hidden-xs"><strong>TOTAL: <%= humanized_money_with_symbol(@order.amount) %></strong></td>
+             <td class="hidden-xs"><strong>TOTAL: <%= humanized_money_with_symbol(@order.amount_cents) %></strong></td>
                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                  data-name="My Purchase"

@@ -2,7 +2,7 @@
   <h1 class="display-3">Merci!</h1>
   <h1> Votre commande est validée!</h1>
   <h3>Status: <strong style="color: green"><%= @order.status %></strong></h3>
-  <h3>Amount: <%= humanized_money_with_symbol(@order.amount) %></h3>
+  <h3>Amount: <%= humanized_money_with_symbol(@order.amount_cents) %></h3>
   <br>
   <p class="lead"><strong>Vous allez recevoir par email le détail de votre commande</strong></p>
   <br>
