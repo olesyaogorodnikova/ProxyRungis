@@ -18,7 +18,7 @@
            <tr>
              <td data-th="Product">
                <div class="row">
-                   <div class="col-sm-2 hidden-xs"><%= cl_image_tag item.package.photo, height: 40 %></div>
+                   <div class="col-sm-3 hidden-xs"><%= cl_image_tag item.package.photo, height: 70 %></div>
                    <div class="col-sm-8 ml-3">
                      <h4 class=""><%= item.package.name%></h4>
                      <p><%= item.package.description%></p>
@@ -44,7 +44,7 @@
                  data-name="My Purchase"
                  data-email="<%= current_user.email %>"
                  data-description="Basket <%= current_user.cart.id %>"
-                 data-amount="<%= @order.amount_cents %>"
+                 data-amount="<%= @order.amount_cents * 100%>"
                  data-currency="<%= @order.amount.currency %>">
                </script></td>
             </tr>
