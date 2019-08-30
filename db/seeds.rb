@@ -8,6 +8,8 @@
 puts "Starting seed"
 CartItem.destroy_all
 
+puts 'aa'
+Order.destroy_all
 puts 'a'
 Cart.destroy_all
 puts 'b'
@@ -17,9 +19,6 @@ Package.destroy_all
 puts 'd'
 
 User.destroy_all
-puts 'e'
-Order.destroy_all
-
 
 
 User.create!(
