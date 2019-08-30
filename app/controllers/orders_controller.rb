@@ -9,9 +9,9 @@ class OrdersController < ApplicationController
     @order = Order.new(cart: cart)
     sum = 0
     cart.cart_items.each do |a|
-      sum += a.package.price_cents * a.quantity
+      sum += a.package.price * a.quantity
     end
-    @order.amount_cents = sum / 100
+    @order.amount = sum
     if @order.save
       redirect_to edit_order_path(@order)
     else

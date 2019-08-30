@@ -3,11 +3,7 @@ class PaymentsController < ApplicationController
     # triche: on a besoin d'une order a ce stade (et donc dun restaurant)
     restaurant = Restaurant.first
     @user = current_user
-    sum = 0
-    current_user.cart.cart_items.each do |a|
-      sum += a.package.price_cents
-    end
-    Order.create!(cart: current_user.cart, restaurant: restaurant, amount_cents: sum)
+
     @order = Order.find(params[:order_id])
   end
 
