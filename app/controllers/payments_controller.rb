@@ -5,9 +5,9 @@ class PaymentsController < ApplicationController
     @user = current_user
     sum = 0
     current_user.cart.cart_items.each do |a|
-      sum += a.package.price
+      sum += a.package.price_cents
     end
-    Order.create!(cart: current_user.cart, restaurant: restaurant, amount: sum)
+    Order.create!(cart: current_user.cart, restaurant: restaurant, amount_cents: sum)
     @order = Order.find(params[:order_id])
   end
 
