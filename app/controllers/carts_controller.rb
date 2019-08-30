@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
 
-
   def new
     @user = current_user
     @cart = Cart.new
