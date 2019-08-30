@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
     @order = Order.new(cart: cart)
     sum = 0
     cart.cart_items.each do |a|
-      sum += a.package.price_cents
+      sum += a.package.price_cents * a.quantity
     end
     @order.amount_cents = sum / 100
     if @order.save
