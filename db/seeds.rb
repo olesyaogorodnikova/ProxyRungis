@@ -14,7 +14,7 @@ Order.destroy_all
 
 
 User.create!(
-    email: "test@mail.com",
+    email: "test@gmail.com",
     password: "123456",
     address: "54 rue de Belleville 75019 Paris"
     )
@@ -123,7 +123,7 @@ b = Package.new(
     category: "Fruits & Legumes",
     bio: true
         )
-b.remote_photo_url = "https://static.pourdebon.com/images/290-216/b8e1f5c4f307efbb15615c2bdab70b70/4d68fd2976639205ef587864e9054977-2018-04-14.jpeg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567163928/Fruits%20and%20Vegetables%20Baskets/4d68fd2976639205ef587864e9054977-2018-04-14_deiduz.jpg"
 b.save
 
 
@@ -135,7 +135,7 @@ b = Package.new(
     bio: true
         )
 
-b.remote_photo_url = "http://www.localizz.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/r/produit-panier-b1_2.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567163700/Vegetables%20only%20Baskets/produit-panier-b1_2_uhkdbr.jpg"
 b.save
 
 
@@ -147,7 +147,7 @@ b = Package.new(
     bio: true
         )
 
-b.remote_photo_url = "https://static.pourdebon.com/images/290-216/301d8409513a1bedd18756cb11c54d9b/ebe441b8130bc9b4d041abcee210d636-2018-06-29.jpeg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567086108/Vegetables%20only%20Baskets/Presentation_Project_Restos_d0ut0u.jpg"
 b.save
 
 
@@ -159,7 +159,7 @@ b = Package.new(
     bio: true
         )
 
-b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1567086139/Fruits%20only%20baskets/download_1_pk0t4o.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567086139/Fruits%20only%20baskets/download_1_pk0t4o.jpg"
 b.save
 
 
@@ -171,7 +171,7 @@ b = Package.new(
     bio: false
         )
 
-b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1567086140/Fruits%20only%20baskets/panier-de-fruits-baroque_eokwlz.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567086140/Fruits%20only%20baskets/panier-de-fruits-baroque_eokwlz.jpg"
 b.save
 
 b = Package.new(
@@ -182,7 +182,7 @@ b = Package.new(
     bio: false
         )
 
-b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1567084806/Fruits%20and%20Vegetables%20Baskets/jjzig5empz6y6zmw5fsa_y6lzsx.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567084806/Fruits%20and%20Vegetables%20Baskets/jjzig5empz6y6zmw5fsa_y6lzsx.jpg"
 b.save
 
 b = Package.new(
@@ -193,7 +193,7 @@ b = Package.new(
     bio: true
         )
 
-b.remote_photo_url = "https://static.pourdebon.com/images/290-216/4a87ae5068be4d5f562ca437e258e6b5/e28dfd7855f5cb929c1fc591e8484007-2018-06-29.jpeg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567086108/Vegetables%20only%20Baskets/Presentation_Project_Restos_d0ut0u.jpg"
 b.save
 
 b = Package.new(
@@ -204,7 +204,7 @@ b = Package.new(
     bio: false
         )
 
-b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1567086140/Fruits%20only%20baskets/download_nedrd7.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567086140/Fruits%20only%20baskets/download_nedrd7.jpg"
 b.save
 
 b = Package.new(
@@ -215,7 +215,7 @@ b = Package.new(
     bio: true
         )
 
-b.remote_photo_url = "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fdjgprimeur.com%2F228-292-large%2Fpanier-fruits-hiver-decouverte.jpg&f=1"
+b.remote_photo_url = "http://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fdjgprimeur.com%2F228-292-large%2Fpanier-fruits-hiver-decouverte.jpg&f=1"
 b.save
 
 b = Package.new(
@@ -226,7 +226,7 @@ b = Package.new(
     bio: true
         )
 
-b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1567161256/Fruits%20only%20baskets/iu_sufb45.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567161256/Fruits%20only%20baskets/iu_sufb45.jpg"
 b.save
 
 b = Package.new(
@@ -237,7 +237,7 @@ b = Package.new(
     bio: false
         )
 
-b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1567084747/Fruits%20and%20Vegetables%20Baskets/ozsckzjmjdjcoegvftdx_unljhb.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567084747/Fruits%20and%20Vegetables%20Baskets/ozsckzjmjdjcoegvftdx_unljhb.jpg"
 b.save
 
 b = Package.new(
@@ -248,7 +248,7 @@ b = Package.new(
     bio: true
         )
 
-b.remote_photo_url = "https://res.cloudinary.com/dhf3phkaa/image/upload/v1567086108/Vegetables%20only%20Baskets/gp_palin_zwkou2.jpg"
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567086108/Vegetables%20only%20Baskets/gp_palin_zwkou2.jpg"
 b.save
 
 puts "Seed finished"
