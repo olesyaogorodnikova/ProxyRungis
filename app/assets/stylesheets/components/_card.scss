@@ -1,13 +1,13 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 160px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-right: 30px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .card-product img {
@@ -81,5 +81,13 @@ margin-bottom: 58px;
 
 #quantity-form-button {
 text-align: center;
+}
+
+.cards-index {
+ display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin: 10px;
+  margin-bottom: 0;
 }
 
