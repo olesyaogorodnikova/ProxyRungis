@@ -72,6 +72,7 @@ display: flex;
 #search-in-packages {
   display: flex;
   justify-content: center;
+  margin-top: 0;
 }
 
 .shopping-basket-icon {
@@ -97,5 +98,10 @@ display: flex;
 
 .active {
   color: blue;
+
+}
+
+#title-index-packages {
+  margin: 10px;
 
 }

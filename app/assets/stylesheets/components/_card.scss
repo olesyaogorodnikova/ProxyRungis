@@ -76,11 +76,15 @@
 }
 
 #container-index-packages h1 {
-margin-bottom: 58px;
+margin-bottom: 10px;
 }
 
 #quantity-form-button {
 text-align: center;
+
+  label {
+padding-left: 0;
+  }
 }
 
 .cards-index {

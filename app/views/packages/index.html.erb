@@ -1,19 +1,20 @@
 
 
 <div class="container" id="container-index-packages">
-<!--   <h1 class="text-center">Choisis ton panier</h1> -->
 
-
-<div class="shopping-basket-icon">
+  <div class="shopping-basket-icon">
 
 <!-- Modal cart -->
 <!-- Button trigger modal -->
-  <!-- <button type="button" data-toggle="modal" data-target="#exampleModalCenter"><span> <i class="fa fa-shopping-basket" aria-hidden="true" id="icon-button-shopping-basket"></i></span></button> -->
+  <button type="button" data-toggle="modal" data-target="#exampleModalCenter"><span> <i class="fa fa-shopping-basket" aria-hidden="true" id="icon-button-shopping-basket"></i></span></button>
 
-<button type="button" data-toggle="modal" data-target="#exampleModalCenter" disabled><span> <i class="fa fa-shopping-basket" id="icon-button-shopping-basket"></i></span></button>
+    <!-- <button type="button" data-toggle="modal" id="icon-button-shopping-basket" data-target="#exampleModal"><span> <i class="fa fa-shopping-basket"></i></span></button> -->
+
+  </div>
+  <h1 class="text-center" id="title-index-packages">Nos paniers de fruits et légumes de saison</h1>
 
 
-<!-- Modal -->
+<!-- Modal de Cart -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -52,9 +53,7 @@
                 <% end %>
               </tbody>
           </table>
-
-
-
+<!-- End Modal de Cart -->
 
 
 
@@ -73,7 +72,7 @@
   <div id="search-in-packages">
     <form action="/packages" method="get" id="packages-choices">
           <select name="category" class="custom-select my-1 mr-sm-2">
-            <option value="" disabled selected>Sélection</option>
+            <option value="" disabled selected>Sélectionner</option>
             <option value="Fruits">Fruits</option>
             <option value="Legumes">Légumes</option>
             <option value="Fruits & Legumes">Fruits & légumes</option>
