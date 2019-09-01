@@ -1,5 +1,5 @@
 #footer {
-  background-color: #E5FFDE;
+  background-color: $footer;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -15,12 +15,12 @@
 }
 
 .fa-facebook {
-  background: #3B5998;
+  background: black;
   color: white;
 }
 
 .fa-twitter {
-  background: #55ACEE;
+  background: black;
   color: white;
 }
 
@@ -29,3 +29,11 @@
   color: white;
 }
 
+a {
+  color: black;
+}
+
+.fa-seedling :hover {
+  background: $light-green;
+  color: white;
+}
