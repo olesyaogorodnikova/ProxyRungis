@@ -106,21 +106,12 @@
   }
 }
 
-#card-package-button-details {
-  color: white;
-  font-weight: bold;
-  padding: 4px 7x;
-  border-radius: 5px;
-  background: #82AE46;
-  border: none;
-}
-
-#button-vaidation-selection {
-  color: white;
-  font-weight: bold;
-  padding: 7px 10px;
-  border-radius: 5px;
-  background: #82AE46;
-  border: none;
-
+#quantity-form-button {
+  .btn-primary {
+    color: white;
+    font-weight: bold;
+    padding: 8px 24px;
+    border-radius: 5px;
+    background: #82AE46;
+  }
 }
