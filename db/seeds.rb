@@ -22,13 +22,13 @@ User.destroy_all
 
 
 User.create!(
-    email: "test@gmail.com",
+    email: "quentin@gmail.com",
     password: "123456",
     address: "54 rue de Belleville 75019 Paris"
     )
 
 User.create!(
-    email: "edouard@gmail.com",
+    email: "gauthier@gmail.com",
     password: "123456",
     address: "34 rue de Vaugirard 75015 Paris"
     )
@@ -122,12 +122,33 @@ a = Restaurant.new(
     )
 a.save
 
+
+a = Restaurant.new(
+    name: "Massale",
+    email: "massale@gmail.com",
+    password: "123456",
+    delivery_start_hour: "11:00",
+    delivery_end_hour: "16:00",
+    address: "5 rue Guillaume Bertrand, Paris, 75 75011"
+    )
+a.save
+
+a = Restaurant.new(
+    name: "Broken biscuits",
+    email: "brokenbiscuits@gmail.com",
+    password: "123456",
+    delivery_start_hour: "15:00",
+    delivery_end_hour: "22:00",
+    address: "10 passage Rochebrune, Paris, 75 75011"
+    )
+a.save
+
 puts 'b'
 
 b = Package.new(
     name: "Petit panier bio de la semaine",
-    description: "1 laitue romaine, 300g de nyrtilles,  3 poivrons, 4 tomates",
-    price: 9,
+    description: "1 salade frisée, 1 aubergine, 1 concombre, 3 poivrons, 4 tomates, 2 échalottes, 4 bananes",
+    price: 8,
     category: "Fruits & Legumes",
     bio: true
         )
@@ -137,7 +158,7 @@ b.save
 
 b = Package.new(
     name: "Petit panier de légumes bio",
-    description: "8 tomates coeur de boeuf, 4 courgettes vertes, 2 salades batavia, 3 ognions doux",
+    description: "5 tomates coeur de boeuf, 4 courgettes vertes, 2 salades batavia, 3 oignions doux, 1 brocoli, 8 carottes",
     price: 12,
     category: "Legumes",
     bio: true
@@ -149,7 +170,7 @@ b.save
 
 b = Package.new(
     name: "Panier ratatouille 3 personnes",
-    description: "750 g de tomates, 350 g de courgettes, 350 g d'aubergine, 350 g de poivrons (rouges et/ou verts)",
+    description: "750g de tomates, 350g de courgettes, 350g d'aubergine, 350g de poivrons (rouges et/ou verts), 2 gousses d'ail, 1 brin de thym, 1 feuille de laurier",
     price: 16,
     category: "Legumes",
     bio: true
@@ -160,8 +181,8 @@ b.save
 
 
 b = Package.new(
-    name: "Panier de légumes bio",
-    description: "8 tomates coeur de boeuf, 4 courgettes vertes, 2 salades batavia, 3 ognions doux, 1 kg de haricots verts, 4 aubergines",
+    name: "Panier de fruits et légumes",
+    description: "8 tomates coeur de boeuf, 4 courgettes vertes, 2 salades batavia, 3 oignions doux, 1 kg de haricots verts, 4 aubergines, 1 kg de raisin blanc, 3 kiwis, 5 oranges, 3 pamplemousses",
     price: 18,
     category: "Legumes",
     bio: true
@@ -173,7 +194,7 @@ b.save
 
 b = Package.new(
     name: "Panier de fruits de la semaine",
-    description: "8 nectarines jaunes, 450g de framboises, 300g de myrtilles, 1 kg de bananes, 400g de litchis, 3 melons",
+    description: "8 nectarines jaunes, 450g de framboises, 300g de myrtilles, 1 kg de bananes, 400g de litchis, 3 oranges, 400g de prunes, 2 kiwis",
     price: 20,
     category: "Fruits",
     bio: false
@@ -195,7 +216,7 @@ b.save
 
 b = Package.new(
     name: "Panier ratatouille 6 personnes",
-    description: "2 kgs de tomates, 700 g de courgettes, 700 g d'aubergine, 700 g de poivrons (rouges et/ou verts)",
+    description: "2 kgs de tomates, 700g de courgettes, 700g d'aubergine, 700g de poivrons (rouges et/ou verts), 5 gousses d'ail, 3 brins de thym, 5 feuilles de laurier",
     price: 17,
     category: "Legumes",
     bio: true
@@ -206,7 +227,7 @@ b.save
 
 b = Package.new(
     name: "Panier de fruits de Charente",
-    description: "4 melons, 500g de framboises, 400g de rhubarbe",
+    description: "4 melons, 500g de framboises, 400g de rhubarbe, 1,5 kgs de nectarines, 400g de prunes",
     price: 20,
     category: "Fruits",
     bio: false
@@ -217,7 +238,7 @@ b.save
 
 b = Package.new(
     name: "Panier de fruits du Languedoc",
-    description: "1 kg d'abricots, 1 kg de poires, 500g  de framboises, 500g de myrtilles",
+    description: "1 kg d'abricots, 1 kg de poires, 500g  de framboises, 500g de myrtilles, 4 bananes, 5 kiwis",
     price: 22,
     category: "Fruits",
     bio: true
@@ -239,7 +260,7 @@ b.save
 
 b = Package.new(
     name: "Grand panier",
-    description: "3 laitues romaines, 600g de nyrtilles, 5 poivrons, 2 kgs de tomates, 4 navets, 2kgs de potiron, 2 kgs de haricots verts",
+    description: "3 laitues romaines, 600g de nyrtilles, 5 poivrons, 2 kgs de tomates, 4 navets, 2kgs de potiron, 2 kgs de haricots verts, 1 kg de raisin blanc",
     price: 40,
     category: "Fruits & legumes",
     bio: false
@@ -258,5 +279,17 @@ b = Package.new(
 
 b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567086108/Vegetables%20only%20Baskets/gp_palin_zwkou2.jpg"
 b.save
+
+b = Package.new(
+    name: "Grand panier bio de la semaine",
+    description: "2 laitues romaines, 600g de nyrtilles, 7 poivrons, 3 kgs de tomates, 5 navets, 3 kgs de haricots verts, 1 kg d'aubergine, 500g de litchis, 4 oignons doux, 5 melons, 4 betteraves",
+    price: 45,
+    category: "Fruits & legumes",
+    bio: false
+        )
+
+b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567434592/Fruits%20and%20Vegetables%20Baskets/panier-de-fruits-et-legumes-janod_mmb7en.jpg"
+b.save
+
 
 puts "Seed finished"
