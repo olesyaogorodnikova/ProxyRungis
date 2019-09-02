@@ -27,7 +27,10 @@ end
   def destroy
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
-    redirect_to packages_path
+    respond_to do |format|
+      format.html { redirect_to packages_path }
+      format.js
+    end
   end
 
  private
