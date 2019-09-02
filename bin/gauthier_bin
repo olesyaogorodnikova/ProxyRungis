@@ -1,3 +1,38 @@
+<section class="product">
+  <div class="product__photo">
+    <div class="photo-container">
+      <div class="photo-main">
+        <div class="controls">
+          <i class="material-icons">Status</i>
+        </div>
+        <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png" alt="green apple slice">
+      </div>
+
+    </div>
+  </div>
+  <div class="product__info">
+    <div class="title">
+      <h1>Ta commande</h1>
+      <span>COD: 45999</span>
+    </div>
+    <div class="price">
+      € <span>20</span>
+    </div>
+
+    <div class="description">
+      <h3>Récapitulatif</h3>
+      <ul>
+        <p>64 rue Vaugirard</p>
+        <p>11H45</p>
+        <p>3 paniers</p>
+    </div>
+    <p class="lead"><%= link_to "Retour page d'accueil", root_path, class: "buy--btn" %>
+  </p>
+  </div>
+</section>
+
+CSS
+
 $color-primary: #4c4c4c;
 $color-secondary: #a6a6a6;
 $color-highlight: #ff3f40;
@@ -15,7 +50,7 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-#h3 {
+h3 {
   font-size: 0.7em;
   letter-spacing: 1.2px;
   color: $color-secondary;
@@ -106,7 +141,7 @@ img {
 }
 
 .title {
-  #h1 {
+  h1 {
     margin-bottom: 0.1em;
     color: $color-primary;
     font-size: 1.5em;
@@ -133,7 +168,7 @@ img {
 .variant {
   overflow: auto;
 
-  #h3 {
+  h3 {
     margin-bottom: 1.1em;
   }
 
@@ -161,7 +196,7 @@ img {
   clear: left;
   margin: 2em 0;
 
-  #h3 {
+  h3 {
     margin-bottom: 1em;
   }
 
