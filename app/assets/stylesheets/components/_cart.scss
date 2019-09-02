@@ -47,12 +47,11 @@ padding: 0px;
 padding-left: 6px;
 margin: 0px;
 font-size: 12px;
-background-color: white;
 border: solid;
 border-width: 1px;
 border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 p {
-  color: black;
+  color: #82AE46;
   }
 }
 
@@ -63,10 +62,21 @@ top: 0px;
 padding-bottom: 0px;
 margin-bottom: 0px;
 
+p {
+  font-color: #82AE46;
+  background-color: none;
+  }
 }
 
 #button-modal-cart {
   padding-top: 1px;
   padding-left: 2px;
   margin: 0px;
+}
+
+#icon-button-shopping-basket {
+  color: #82AE46;
+  font-weight: bold;
+  padding: 8px 24px;
+  border: none;
 }
