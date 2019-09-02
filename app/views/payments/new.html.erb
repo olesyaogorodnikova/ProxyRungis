@@ -63,4 +63,11 @@
 
 </div>
    </div>
+   <div
+  id="map"
+  data-markers="<%= @marker_address.to_json %>";
+  data-restaurants="<%= @markers.to_json %>";
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-center="<%= @center  %>">
+</div>
 </div>

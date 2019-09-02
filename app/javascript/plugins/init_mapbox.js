@@ -23,8 +23,20 @@ const buildMap = (center) => {
   });
 };
 
+
+
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
+  const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(map);
+  });
+};
+
+const addMarkerToMapPayment = (map, markers) => {
+  marker_address.forEach((marker) => {
   const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
@@ -41,7 +53,9 @@ const initMapbox = () => {
     const center = mapElement.dataset.center;
     const map = buildMap(center);
     const markers = JSON.parse(mapElement.dataset.markers);
+    const restaurants_markers = JSON.parse(mapElement.dataset.restaurants);
     addMarkersToMap(map, markers);
+    addMarkersToMap(map, restaurants_markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
     fitMapToMarkers(map, markers);
 

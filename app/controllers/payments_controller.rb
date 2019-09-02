@@ -1,10 +1,25 @@
 class PaymentsController < ApplicationController
   def new
     # triche: on a besoin d'une order a ce stade (et donc dun restaurant)
-    restaurant = Restaurant.first
+
+    @restaurants = Restaurant.geocoded
     @user = current_user
 
     @order = Order.find(params[:order_id])
+    @center = [2.3800903, 48.864922]
+    @marker_address =
+    [{
+      lat: @order.latitude,
+      lng: @order.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: {ord: @order })
+    }]
+    @markers = @restaurants.map do |restaurant|
+    {
+      lat: restaurant.latitude,
+      lng: restaurant.longitude,
+      infoWindow: render_to_string(partial: "info_order_window", locals: { restaurant: restaurant })
+    }
+  end
   end
 
   def create
