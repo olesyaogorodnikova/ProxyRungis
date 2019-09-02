@@ -74,11 +74,11 @@
     <form action="/packages" method="get" id="packages-choices">
           <select name="category" class="custom-select my-1 mr-sm-2">
             <option value="" disabled selected>Sélectionner</option>
-            <option value="Fruits" <%= 'selected' if params[:category] == "Fruits" %>>Fruits</option>
-            <option value="Legumes" <%= 'selected' if params[:category] == "Legumes" %>>Légumes</option>
-            <option value="Fruits & Legumes" <%= 'selected' if params[:category] == "Fruits & Legumes" %>>Fruits & légumes</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Legumes">Légumes</option>
+            <option value="Fruits & Legumes">Fruits & légumes</option>
           </select>
-          <input type="checkbox" name="bio" value=true <%= "checked" if params[:bio] == "true" %>>
+          <input type="checkbox" name="bio" value=true>
           <label id="label-bio">Bio</label>
        <button type="submit" class="btn btn-primary my-1 bt-sm">Valider</button>
     </form>
