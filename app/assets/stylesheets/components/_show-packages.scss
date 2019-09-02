@@ -67,6 +67,9 @@
 #modal-header-packages {
 display: flex;
 
+img {
+  width: 400px;
+}
 }
 
 #search-in-packages {
@@ -104,4 +107,8 @@ display: flex;
 #title-index-packages {
   margin: 10px;
 
+}
+
+#cart_item_quantity {
+  text-align: center;
 }

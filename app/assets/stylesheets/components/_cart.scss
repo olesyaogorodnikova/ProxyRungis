@@ -39,6 +39,34 @@
 #modal-body-shopping-basket {
 td {
   padding-left: 0;
+  }
 }
 
+#badge-number-cart-items {
+padding: 0px;
+padding-left: 6px;
+margin: 0px;
+font-size: 12px;
+background-color: white;
+border: solid;
+border-width: 1px;
+border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+p {
+  color: black;
+  }
+}
+
+#number-cart-items {
+font-size: 12px;
+position: relative;
+top: 0px;
+padding-bottom: 0px;
+margin-bottom: 0px;
+
+}
+
+#button-modal-cart {
+  padding-top: 1px;
+  padding-left: 2px;
+  margin: 0px;
 }
