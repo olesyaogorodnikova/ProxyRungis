@@ -1,0 +1,45 @@
+// #badge-modal-cart {
+//   width: 60px;
+//   height: 60px;
+//   border-radius: 50%;
+//   background-color: white;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: absolute;
+
+// }
+
+
+#badge-cart {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  position: fixed;
+}
+
+
+#button-cart {
+ background-color: none;
+ border: none;
+ color: white;
+ background: none;
+ padding-top: 10px;
+ padding-left: 10px;
+}
+
+#cart-number-items {
+  background-color: none;
+  border: none;
+  color: white;
+  background-color: none;
+  padding-top: 10px;
+  padding-left: 7px;
+}
