@@ -6,11 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Starting seed"
-Restaurant.destroy_all
-Package.destroy_all
-User.destroy_all
-Order.destroy_all
+CartItem.destroy_all
 
+puts 'aa'
+Order.destroy_all
+puts 'a'
+Cart.destroy_all
+puts 'b'
+Restaurant.destroy_all
+puts 'c'
+Package.destroy_all
+puts 'd'
+
+User.destroy_all
 
 
 User.create!(

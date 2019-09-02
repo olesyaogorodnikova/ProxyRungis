@@ -1,6 +1,17 @@
 class OrdersController < ApplicationController
+
   def index
     @orders = Order.all
+    @orders = Order.geocoded
+    @markers = @orders.map do |ord|
+      {
+        lat: ord.latitude,
+        lng: ord.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { ord: order }),
+        image_url: helpers.asset_url('marker_icon.png')
+      }
+    end
+
   end
 
   def create
