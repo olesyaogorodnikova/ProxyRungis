@@ -4,22 +4,15 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #1EDD88;
-
-}
+ }
 
 .btn-flat-home {
   color: white;
   font-weight: bold;
-  padding: 8px 24px;
+  padding: 10px 24px;
   border-radius: 5px;
   background: $green;
-
-
-}
-
-.btn-flat-home :hover {
-  background: $light-green;
-
+  box-shadow: 5px 5px 5px gray;
 }
 
 
@@ -114,4 +107,37 @@
     border-radius: 5px;
     background: #82AE46;
   }
+}
+
+button.stripe-button-el,
+button.stripe-button-el>span {
+  background-color: #2D7BF7 !important;
+  background-image: none;
+  padding-top: 2px;
+  height:40px;
+  width:150px;
+
+box-shadow: 5px 5px 5px gray;
+font-size: 16px !important;
+
+}
+
+.inline {
+   display:inline-block;
+   margin-right:5px;
+}
+
+.btn-flat-dash {
+  color: white;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 5px;
+  background: #0A5AC1;
+  box-shadow: 5px 5px 5px gray;
+}
+
+
+.btn-flat-dash:hover {
+  background: #6BC5D2;
+  color: white;
 }
