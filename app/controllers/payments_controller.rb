@@ -19,7 +19,7 @@ class PaymentsController < ApplicationController
       lng: restaurant.longitude,
       infoWindow: render_to_string(partial: "info_order_window", locals: { restaurant: restaurant })
     }
-  end
+    end
   end
 
   def create

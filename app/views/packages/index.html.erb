@@ -80,7 +80,7 @@
           </select>
           <input type="checkbox" name="bio" value=true <%= "checked" if params[:bio] == "true" %>>
           <label id="label-bio">Bio</label>
-       <button type="submit" class="btn btn-primary my-1 bt-sm">Valider</button>
+       <button type="submit" class="btn btn-primary my-1 bt-sm" id="button-vaidation-selection">Valider</button>
     </form>
 
 
@@ -101,7 +101,7 @@
         </div>
  <!-- Button trigger modal -->
         <div class="card-package-button-details ">
-          <button type="button" class="btn btn-primary btn-sm" id="card-package-button-details" data-toggle="modal" data-target="#exampleModal-<%= package.id%>">Details</button>
+          <button type="button" class="btn btn-primary btn-sm" id="card-package-button-details" data-toggle="modal" data-target="#exampleModal-<%= package.id%>">Détails</button>
           <div class="card-product-price">
             <h2 class="text-center"><%= package.price %>€</h2>
           </div>
