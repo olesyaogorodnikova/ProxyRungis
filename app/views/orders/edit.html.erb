@@ -13,12 +13,7 @@
 <div>
   <h2 class = "mb-5 text-center" style="color: #82AE46"> Voir les points de retraits à proximité :</h2>
 </div>
-<div
-  id="map"
-  data-markers="<%= @markers.to_json %>";
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-center="<%= @center  %>">
-</div>
+
 <div class="container form-wrapper" style="text-align: center; padding: 20px">
   <%= f.button :submit, "Valider", class: "btn btn-lg btn-flat-home px-5 mt-5" %>
   <% end %>
