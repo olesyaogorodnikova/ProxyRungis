@@ -1,115 +1,148 @@
 
 
 <div class="container" id="container-index-packages">
-  <h1 class="text-center">Choisis ton panier</h1>
+
+  <div class="shopping-basket-icon">
+
+<!-- Modal cart -->
+<!-- Button trigger modal -->
+<% unless current_user.cart.cart_items.empty? %>
+  <button type="button" data-toggle="modal" data-target="#exampleModalCenter" id="button-modal-cart"><span><i class="fa fa-shopping-basket" aria-hidden="true" id="icon-button-shopping-basket"></i>
+  <p class="badge badge-light" id="number-cart-items"><%=current_user.cart.cart_items.count %></p></span></button>
+<% end %>
+    <!-- <button type="button" data-toggle="modal" id="icon-button-shopping-basket" data-target="#exampleModal"><span> <i class="fa fa-shopping-basket"></i></span></button> -->
+
+  </div>
+  <h1 class="text-center" id="title-index-packages">Nos paniers de fruits et légumes de saison</h1>
+
+
+<!-- Modal de Cart -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Votre commande en cours:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body-shopping-basket">
+          <table class="table table text-center" id="table-modal-shopping-basket">
+            <thead>
+                <th scope="col"></th>
+                <th scope="col">Nom du panier</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Prix unitaire</th>
+                <th scope="col">Total</th>
+            </thead>
+
+              <% total_price = 0 %>
+              <% current_user.cart.cart_items.each do |cart_item| %>
+              <tbody>
+                <tr data-cart-item-id="<%= cart_item.id %>">
+                <td></td>
+               <!--  <td> <%= cl_image_tag cart_item.package.photo %></td> -->
+                <td><%= cart_item.package.name %></td>
+                <td><%= cart_item.quantity  %></td>
+                <td><%= cart_item.package.price %> €</td>
+                 <% price_per_panier = cart_item.package.price * cart_item.quantity %>
+                <td><%= price_per_panier %> €</td>
+                <td><%= link_to cart_item_path(cart_item), method: :delete, remote: true do %>
+                    <i class="fa fa-trash destroy_package_cart_item"></i></td>
+                    <% end %>
+                </tr>
+                <% total_price += price_per_panier %>
+                <% end %>
+              </tbody>
+          </table>
+<!-- End Modal de Cart -->
 
 
 
+        </div>
+        <div class="modal-footer" id="button-validation-cart-item">
+          <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-primary btn-sm" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Search form -->
+  <div id="search-in-packages">
     <form action="/packages" method="get" id="packages-choices">
           <select name="category" class="custom-select my-1 mr-sm-2">
-            <option value="" disabled selected>Fruits, légumes...ou les 2</option>
-            <option value="Fruits">Fruits</option>
-            <option value="Legumes">Légumes</option>
-            <option value="Fruits & Legumes">Fruits & légumes</option>
+            <option value="" disabled selected>Sélectionner</option>
+            <option value="Fruits" <%= 'selected' if params[:category] == "Fruits" %>>Fruits</option>
+            <option value="Legumes" <%= 'selected' if params[:category] == "Legumes" %>>Légumes</option>
+            <option value="Fruits & Legumes" <%= 'selected' if params[:category] == "Fruits & Legumes" %>>Fruits & légumes</option>
           </select>
-          <input type="checkbox" name="bio" value=true>
+          <input type="checkbox" name="bio" value=true <%= "checked" if params[:bio] == "true" %>>
           <label id="label-bio">Bio</label>
        <button type="submit" class="btn btn-primary my-1 bt-sm">Valider</button>
     </form>
 
 
+
+  </div>
+
 </div>
 
+  <div class="cards-index">
+    <% @packages.each do |package| %>
 
-<div class="cards-index">
-    <div class="row" >
+      <div class="card-product">
+        <%= cl_image_tag package.photo, crop: :fit %>
 
-        <div class="col-md-6" >
-          <% @packages.each do |package| %>
-
-             <!-- Modal -->
-              <div class="modal fade" id="exampleModal-<%= package.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <%= cl_image_tag(package.photo, width: '95%') %>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-
-                    <div class="modal-body text-center">
-                      <h3 class="modal-title" id="exampleModalLabel"> <%= package.name %></h3>
-                      <% products = package.description.split(",") %>
-                      <% products.each do |product|%>
-                      <p class="modal-title" id="exampleModalLabel">- <%= product %></p>
-                      <% end %>
-                      <br>
-                      <h3 class="modal-title" id="exampleModalLabel"> <%= package.price %>€</h3>
-                    </div>
-                    <div class="modal-footer" id="quantity-form-button">
-                    <%= render 'cart_items/form', package: package, cart_item: @cart_item %>
-                    <!-- <button type="but ton" class="btn btn-primary">Add</button> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-       <!-- Modal end -->
-
-            <div class="card-product">
-              <%= cl_image_tag package.photo, crop: :fit %>
-
-                <div class="card-product-infos">
-                  <h2><%= package.name %></h2>
-                  <p><%= package.description %></p>
-                </div>
-                <!-- Button trigger modal -->
-                <div class="card-package-button-details ">
-                  <button type="button" class="btn btn-primary btn-sm" id="card-package-button-details" data-toggle="modal" data-target="#exampleModal-<%= package.id%>">Details</button>
-                  <div class="card-product-price">
-                    <h2 class="text-center"><%= package.price %>€</h2>
-                  </div>
-                  </div>
-                </div>
-          <% end %>
+        <div class="card-product-infos">
+          <h2><%= package.name %></h2>
+          <p><%= package.description %></p>
+        </div>
+ <!-- Button trigger modal -->
+        <div class="card-package-button-details ">
+          <button type="button" class="btn btn-primary btn-sm" id="card-package-button-details" data-toggle="modal" data-target="#exampleModal-<%= package.id%>">Details</button>
+          <div class="card-product-price">
+            <h2 class="text-center"><%= package.price %>€</h2>
+          </div>
         </div>
 
-      <div class="col-md-5" id="cart-table-packages">
-        <table class="table table text-center">
-            <thead>
-              <tr>
-              <h4 class="text-center">Votre panier en cours:</h4>
-              <br>
-              <th scope="col"></th>
-              <th scope="col">Nom du panier</th>
-              <th scope="col">Quantité</th>
-              <th scope="col">Prix unitaire</th>
-              <th scope="col">Total</th>
-              </tr>
-            </thead>
-              <% total_price = 0 %>
-              <% current_user.cart.cart_items.each do |cart_item| %>
-            <tbody>
-              <tr>
-              <td></td>
-              <td> <%= cart_item.package.name %></td>
-              <td><%= cart_item.quantity  %></td>
-              <td><%= cart_item.package.price %> €</td>
-               <% price_per_panier = cart_item.package.price * cart_item.quantity %>
-              <td><%= price_per_panier %> €</td>
-              <td><%= link_to cart_item_path(cart_item), method: :delete, data: { confirm: "Confirmez-vous cette suppression ?" } do %>
-                  <i class="fa fa-trash destroy_package_cart_item"></i></td>
-                  <% end %>
-              </tr>
-              <% total_price += price_per_panier %>
-              <% end %>
-           </tbody>
-          </table>
-          <h5 class="text-right">Total: <%= total_price %> €</h5>
-          <div class="validation-cart">
-            <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-primary btn-sm" %>
-          </div>
-      </div>
+        <!-- Modal-->
+        <div class="modal fade" id="exampleModal-<%= package.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header" id="modal-header-packages">
+                <%= cl_image_tag(package.photo, width: "100%") %>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
 
-    </div>
+              <div class="modal-body text-center">
+                <h3 class="modal-title" id="exampleModalLabel"> <%= package.name %></h3>
+                <% products = package.description.split(",") %>
+                <% products.each do |product|%>
+                <p class="modal-title" id="exampleModalLabel">- <%= product %></p>
+                <% end %>
+                <br>
+                <h3 class="modal-title" id="exampleModalLabel"> <%= package.price %>€</h3>
+              </div>
+
+              <div class="modal-footer" id="quantity-form-button"></button>
+              <%= render 'cart_items/form', package: package, cart_item: @cart_item %>
+              <!-- <button type="but ton" class="btn btn-primary">Add</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- Modal end -->
+
+
+
+
+
+      </div>
+    <% end %>
   </div>
+
+
