@@ -1,9 +1,13 @@
+
+<% @myorders.each do |a| %>
+
 <section class="product">
   <div class="product__photo">
     <div class="photo-container">
       <div class="photo-main">
         <div class="controls">
-          <i class="material-icons">Status</i>
+          <i class ="material-icons"><%= 'status' %></i>
+
         </div>
         <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png" alt="green apple slice">
       </div>
@@ -12,22 +16,22 @@
   </div>
   <div class="product__info">
     <div class="title">
-      <h1 id="h1" >Ta commande</h1>
+      <h1 id="h1"><%= 'Ta commande' %></h1>
       <span>COD: 45999</span>
     </div>
     <div class="price">
-      € <span>20</span>
+     € <span class ="price"><%= a.amount_cents / 100 %></span>
     </div>
 
     <div class="description">
       <h3 id="h3 ">Récapitulatif</h3>
       <ul>
-        <p>64 rue Vaugirard</p>
-        <p>11H45</p>
-        <p>3 paniers</p>
+        <p><%= '64 rue vaugirard'%></p>
+        <p><%= '11H45'%></p>
+        <p><%= 'Nom du panier'%></p>
     </div>
     <p class="lead"><%= link_to "Retour page d'accueil", root_path, class: "buy--btn" %>
   </p>
   </div>
 </section>
-
+<% end %>
