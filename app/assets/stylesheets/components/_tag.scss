@@ -1,0 +1,25 @@
+.product-tag {
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.product-tag.bg-green {
+  background-color: $green;
+  color: white;
+}
+
+.product-tag.bg-pink {
+  background-color: #E4B2D6;
+  color: white;
+}
+.product-tag.bg-blue {
+  background-color: #A3D1E1;
+  color: white;
+}
+
+.product-tag.bg-orange {
+  background-color: #FDAD75;
+  color: white;
+}

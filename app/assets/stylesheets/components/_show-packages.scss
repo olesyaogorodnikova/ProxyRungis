@@ -56,6 +56,7 @@
   label {
     margin-top: 10px;
     margin-left: 5px;
+    color: black;
   }
 }
 
@@ -111,4 +112,34 @@ img {
 
 #cart_item_quantity {
   text-align: center;
+}
+
+#modal-card-package {
+  h5 {
+  font-size: 12px;
+  padding-top: 16px;
+  }
+
+  h3 {
+    padding-top: 0px;
+  }
+}
+
+#modal-package-description-price {
+  display: flex;
+}
+
+#modal-package-description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  text-align: left;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+#modal-package-price {
+  text-align: center;
+  padding-left: 70px;
+  padding-top: 37px;
 }

@@ -3,7 +3,7 @@
 <div class="container">
   <div class="form-wrapper" style="width: 500px; margin: 0 auto;color: white; font-weight: bold">
       <%= simple_form_for @order do |f| %>
-        <%= f.input :day, as: :string, required: true, input_html: {class: "datepicker"} %>
+        <%= f.input :day, as: :string, required: true, input_html: {class: "datepicker"}, label: "Choisissez un jour" %>
         <%= f.input :time_start, as: :time, required: true, input_html: {class: "timepicker"} %>
         <%= f.input :time_end, as: :time, required: true, input_html: {class: "timepicker"} %>
         <%= f.input :address, as: :string, required: true, placeholder: "16 villa gaudelet" %>

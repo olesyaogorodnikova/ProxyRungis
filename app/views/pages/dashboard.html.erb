@@ -18,8 +18,8 @@
           <h3 class="order-status">Etat de commande : <strong><%= order.status%></strong></h3> <!-- Ici il faut regarder comment changer la color du texte en fonction de if :-->
           <p><u><strong>Votre commande sera livré à côté de :  </strong></u></p>
           <p><mark><%= order.address%></mark></p> <!-- Ici il faut split l'adresse à la virgule -->
-          <p>-Vous devrez la retirer le <mark><%= order.day.strftime("%-d %B %Y") %></mark></p>
-          <p>-Votre créneau horraire choisi : De <mark><%= order.time_start.strftime("%Hh%M") %> à <%= order.time_end.strftime("%Hh%M") %></mark>
+          <p>-Vous devrez la retirer le <mark><%= order.day&.strftime("%-d %B %Y") %></mark></p>
+          <p>-Votre créneau horraire choisi : De <mark><%= order.time_start&.strftime("%Hh%M") %> à <%= order.time_end&.strftime("%Hh%M") %></mark>
           </p>
           <p>Vous recevrez le détail de la commande par sms et par mail.</p>
           <div class="price">

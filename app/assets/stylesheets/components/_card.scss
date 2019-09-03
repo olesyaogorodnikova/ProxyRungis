@@ -4,10 +4,13 @@
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding-right: 30px;
   margin-bottom: 0;
+}
+
+button:focus{
+  outline:none;
 }
 
 .card-product img {
@@ -115,4 +118,87 @@ padding-left: 0;
   position: sticky;
   top:0;
 
+}
+
+
+#card-product-infos {
+  font-family: Lora;
+  h1 {
+    text-align: left;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: Lora;
+    color: #0E0000;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Lora;
+    color: #0E0000;
+  }
+  h3 {
+    font-size: 16px;
+    font-family: Lora;
+    color: #0E0000;
+    }
+}
+
+
+#card-product-package-name {
+
+}
+
+#card-product-price-category-bio {
+  display: flex;
+  align-items: flex-end;
+  // justify-content: space-between;
+}
+
+
+#card-product-price {
+  margin-top: 20px;
+}
+
+
+#card-product-category-bio {
+  display: flex;
+}
+
+#tag-card-product-category {
+  background-color: #FED6BB;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+#tag-card-product-bio {
+  margin-left: 10px;
+  background-color: #82AE46;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 6px;
+}
+
+#button-modal-show-packages {
+
+}
+
+#card-for-displaying-modal-composition {
+}
+
+
+#main-container-index-packages {
+    padding-bottom: 80px;
+}
+
+#title-index-packages {
+  color: white;
+  padding-top: 111px;
+}
+
+#search-in-packages {
+  color: white;
+}
+
+#banner-index-packages{
+  height: 300px;
 }

@@ -12,34 +12,44 @@
 
 
 #badge-cart {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background-color: blue;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 30px;
   position: fixed;
+  border: 5px solid #82AE46;
 }
-
 
 #button-cart {
  background-color: none;
  border: none;
- color: white;
+ color: #82AE46;
  background: none;
- padding-top: 10px;
- padding-left: 10px;
+ padding-top: 15px;
+ padding-left: 12px;
+ border-color: red;
+ border: 5px;
 }
+
 
 #cart-number-items {
   background-color: none;
   border: none;
-  color: white;
+  color: #82AE46;
   background-color: none;
   padding-top: 10px;
-  padding-left: 7px;
+  padding-left: 0px;
+  font-size: 14px;
 }
+
+
+i.fa.fa-shopping-basket {
+    font-size: 28px;
+}
+
