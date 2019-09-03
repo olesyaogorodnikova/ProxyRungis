@@ -2,17 +2,15 @@
 
 <div class="container" id="container-index-packages">
 
-  <div class="shopping-basket-icon">
 
-<!-- Modal cart -->
-<!-- Button trigger modal -->
-<% unless current_user.cart.cart_items.empty? %>
-  <button type="button" data-toggle="modal" data-target="#exampleModalCenter" id="button-modal-cart"><span><i class="fa fa-shopping-basket" aria-hidden="true" id="icon-button-shopping-basket"></i>
-  <p class="badge badge-light" id="number-cart-items"><%=current_user.cart.cart_items.count %></p></span></button>
-<% end %>
-    <!-- <button type="button" data-toggle="modal" id="icon-button-shopping-basket" data-target="#exampleModal"><span> <i class="fa fa-shopping-basket"></i></span></button> -->
+  <div id="buttons-cart">
+      <% unless current_user.cart.cart_items.empty? %>
+        <div id="badge-cart">
+          <button type="button" data-toggle="modal" data-target="#exampleModalCenter" id="button-cart"><span><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+          <p class="badge" id="cart-number-items"><%=current_user.cart.cart_items.count %></p></span></button>
+          <% end %>
+        </div>
 
-  </div>
   <h1 class="text-center" id="title-index-packages">Nos paniers de fruits et légumes de saison</h1>
 
 
