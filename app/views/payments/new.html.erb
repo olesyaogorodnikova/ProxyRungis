@@ -35,7 +35,7 @@
             <tr><td ></td>
               <td class="hidden-xs"><strong>TOTAL: <%= humanized_money_with_symbol(@order.amount) %></strong></td></tr>
             <tr>
-              <td style="color: #82AE46"><ins><strong><%= link_to "Continuer des achats", packages_path %></strong></span></ins></td>
+              <td style="color: #82AE46"><ins><%= link_to "Continuer des achats", packages_path %></ins></td>
               <td> <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                  data-label="Payer par carte"
