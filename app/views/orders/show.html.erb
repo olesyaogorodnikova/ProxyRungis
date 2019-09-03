@@ -1,16 +1,23 @@
-<div class="jumbotron text-center contener">
-  <h1 class="display-3">Merci!</h1>
-  <h1> Votre commande est validée!</h1>
-  <h3>Status: <strong style="color: green"><%= @order.status %></strong></h3>
-  <h3>Amount: <%= humanized_money_with_symbol(@order.amount) %></h3>
-  <br>
-  <p class="lead"><strong>Vous allez recevoir par email le détail de votre commande</strong></p>
-  <br>
-  <p>
-    Having trouble? <a href="">Contact us</a>
-  </p>
-  <p class="lead"><%= link_to "Continue Shopping", packages_path, class: "btn btn-warning" %>
-  </p>
-  <p class="lead"><%= link_to "Voir mes commandes", dashboard_path, class: "btn btn-warning" %>
-  </p>
-</div>
+
+    <div class="jumbotron text-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('<%= cl_image_path'veggi_lt3fr1.jpg', height: 600, width: 1200, crop: :fill %>'); color:white">
+      <h2 class="display-4" style="color:white">Merci!</h2>
+      <br>
+      <h4> <strong>Votre commande est validée!</strong></h4>
+       <br>
+      <h4> Statut: <strong style="color: #82AE46"><%= @order.status %></strong></h4>
+      <br>
+      <h4>Montant: <strong><%= humanized_money_with_symbol(@order.amount) %></strong></h4>
+      <br>
+      <h4 class="">Vous allez recevoir par <strong>Email</strong> le détail de votre commande</h4>
+      <br>
+
+      <br>
+      <h5 class="inline"><%= link_to "Continuer des achats", packages_path, class: "btn btn-md btn-flat-home" %>
+      </h5>
+      <h5 class="lead inline ml-3"><%= link_to "Voir mes commandes", dashboard_path, class: "btn btn-md btn-flat-dash" %>
+      </h5>
+       <br>
+        <br>
+      <p>Avoir des problèmes? <a href=""><ins style="color: white">Contactez nous</ins></a>
+      </p>
+    </div>
