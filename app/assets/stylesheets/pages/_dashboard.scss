@@ -3,22 +3,12 @@ $color-secondary: #a6a6a6;
 $color-highlight: #ff3f40;
 
 
-
-html,
-body {
-  height: 100%;
-}
-
 body {
   display: grid;
   grid-template-rows: 1fr;
   font-family: "Raleway", sans-serif;
-}
+  height: 100%;
 
-#h3 {
-  font-size: 0.7em;
-  letter-spacing: 1.2px;
-  color: $color-secondary;
 }
 
 img {
@@ -39,9 +29,15 @@ img {
 }
 
 /* ----- Photo Section ----- */
+.photo-produit-dashboard {
+  max-width: 100%;
+  filter: drop-shadow(1px 1px 3px $color-secondary);
+}
+
 .product__photo {
   position: relative;
 }
+
 
 .photo-container {
   position: absolute;
@@ -54,21 +50,10 @@ img {
   box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
 }
 
-.photo-main {
+.fond-vert {
   border-radius: 6px 6px 0 0;
   background-color: #9be010;
   background: radial-gradient(#e5f89e, #96e001);
-
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.8em;
-    color: #fff;
-
-    i {
-      cursor: pointer;
-    }
-  }
 
   img {
     position: absolute;
@@ -110,7 +95,7 @@ img {
     margin-bottom: 0.1em;
     color: $color-primary;
     font-size: 1.5em;
-    font-weight: 900;
+    font-weight: 200;
   }
 
   span {
@@ -121,63 +106,20 @@ img {
 
 .price {
   margin: 1.5em 0;
-  color: #fdad75;
+  color: #52BE80;
   font-size: 1.2em;
+  padding-left : 70%;
 
   span {
     padding-left: 0.15em;
     font-size: 2.9em;
   }
-}
-
-.variant {
-  overflow: auto;
-
-  #h3 {
+  .order-status {
     margin-bottom: 1.1em;
   }
-
-  li {
-    float: left;
-    width: 35px;
-    height: 35px;
-    padding: 3px;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    cursor: pointer;
-
-    &:first-child,
-    &:hover {
-      border: 1px solid $color-secondary;
-    }
-  }
-
-  li:not(:first-child) {
-    margin-left: 0.1em;
-  }
 }
 
-.description {
-  clear: left;
-  margin: 2em 0;
-
-  #h3 {
-    margin-bottom: 1em;
-  }
-
-  ul {
-    font-size: 0.8em;
-    list-style: disc;
-    margin-left: 1em;
-  }
-
-  li {
-    text-indent: -0.6em;
-    margin-bottom: 0.5em;
-  }
-}
-
-.buy--btn {
+.btn-retour {
   padding: 1.5em 3.1em;
   border: none;
   border-radius: 7px;
@@ -185,7 +127,7 @@ img {
   font-weight: 700;
   letter-spacing: 1.3px;
   color: #fff;
-  background-color: #fdad75;
+  background-color: #52BE80;
   box-shadow: 2px 2px 25px -7px $color-primary;
   cursor: pointer;
 
