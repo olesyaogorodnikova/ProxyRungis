@@ -10,12 +10,12 @@ class CartItemsController < ApplicationController
     @package = Package.find(params[:package_id])
     if current_user.cart.cart_items.map { |ci| ci.package }.include?(@package)
       @cart_item = current_user.cart.cart_items.find_by(package_id: @package.id)
-          @cart_item.quantity += cart_item_params[:quantity].to_i
-          @cart_item.save
-        else
-        @cart_item = CartItem.new(cart_item_params)
-        @cart_item.package = @package
-        @cart_item.cart = current_user.cart || Cart.new(user: current_user)
+      @cart_item.quantity += cart_item_params[:quantity].to_i
+      @cart_item.save
+    else
+      @cart_item = CartItem.new(cart_item_params)
+      @cart_item.package = @package
+      @cart_item.cart = current_user.cart || Cart.new(user: current_user)
     end
       if @cart_item.save
         redirect_to packages_path

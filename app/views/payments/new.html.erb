@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container mt-2">
   <div class="row" >
-    <div class="col-md-8" >
+    <div class="col-md-8 mt-4" >
     <%= form_tag order_payments_path(@order) do %>
-      <h2 class ="offset-5" style="color:#82AE46">Check-Out</h2>
+      <h2 class ="offset-5 mb-4" style="color:#82AE46">Check-Out</h2>
       <div class="container">
         <table id="cart" class="table table-hover">
           <thead>
@@ -35,7 +35,7 @@
             <tr><td ></td>
               <td class="hidden-xs"><strong>TOTAL: <%= humanized_money_with_symbol(@order.amount) %></strong></td></tr>
             <tr>
-              <td><%= link_to "Continuer des achats", packages_path, class: "btn-flat-home" %></td>
+              <td style="color: #82AE46"><ins><%= link_to "Continuer des achats", packages_path %></ins></td>
               <td> <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                  data-label="Payer par carte"
@@ -50,21 +50,21 @@
         </table>
       </div>
     <% end %>
-    </div>
-    <div class="col-md-4" id="cart-table-st">
-      <div class="card-category content mt-5 pt-5 pb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%=  cl_image_path'fruit_basket_dfayvi.webp' %>'); height: 400px">
-        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @user.address if !@user.address.nil? %>
-        <br><br>le <%= @order.day.strftime("%-d %B %Y") %><br>entre <%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong>.</p>
-      </div>
-    </div>
-<div class="container">
-  <div class = "ml-2 mt-4"
+    <div class="container">
+  <div class="ml-2 mt-4"
   id="map"
   data-markers="<%= @marker_address.to_json %>";
   data-restaurants="<%= @markers.to_json %>";
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>";
   data-center="<%= @center  %>">
   </div>
-  </div>
+</div>
+    </div>
+    <div class="col-md-4" id="cart-table-st">
+      <div class="card-category content mt-2 pt-2 pb-2" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path'fruit_basket_dfayvi.webp' %>'); height: 400px">
+        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @user.address if !@user.address.nil? %>
+        <br><br>le <%= I18n.l(@order.day, format: :long, locale: :'fr') %><br>entre <%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong>.</p>
+      </div>
+    </div>
 </div>
 

@@ -24,6 +24,7 @@ gem 'money-rails'
 gem 'stripe'
 
 gem 'pg_search'
+gem 'rails-i18n', '~> 5.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

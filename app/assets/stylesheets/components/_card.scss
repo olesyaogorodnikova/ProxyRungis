@@ -102,10 +102,10 @@ padding-left: 0;
 
  .content {
   position: absolute; /* Position the background text */
-  bottom: 6em;
+  bottom: 5em;
   left: 0em; /* At the bottom. Use top:0 to append it to the top */
   background: rgb(154,205,50); /* Fallback color */
-  background: rgba(65,87,35, 0.6); /* Black background with 0.5 opacity */
+  background: rgba(65,87,35, 0.7); /* Black background with 0.5 opacity */
   color: white; /* Grey text */
   width: 100%; /* Full width */
   padding: 20px; /* Some padding */

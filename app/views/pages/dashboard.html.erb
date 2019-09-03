@@ -1,33 +1,49 @@
-<div class="container" >
-  <% @myorders.each do |order| %>
-    <section class="product">
-      <div class="photo-produit-dashboard">
-        <div class="photo-container">
-          <div class="fond-vert">
-            <div class="controls">
-            </div>
-            <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png" alt="La photo du premier panier"> <!-- Ici on doit décider pour les photos qu'on met-->
-          </div>
-        </div>
+<div class="jumbotron text-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('<%= cl_image_path'veggi_lt3fr1.jpg', height: 300, width: 1200, crop: :fill %>'); color:white"></div>
+<div class="container mt-2">
+  <div class="flex-dashboard">
+    <h2 class ="mb-4" style="color:#82AE46">Vos achats</h2>
+    <div class="row" >
+      <div class="col-md-2"> </div>
+      <div class="col-md-8 mt-2 justify-content-center" >
+        <table id="cart" class="table table-hover">
+          <thead>
+            <tr>
+              <th style="width:80%"><h5><strong>Description </strong></h5></th>
+              <th style="width:20%"><h5><strong>Prix</strong></h5></th>
+              <th style="width:11%"><h5><strong>Statut</strong></h5></th>
+            </tr>
+          </thead>
+          <% @myorders.each do |order| %>
+          <%= form_tag order_payments_path(order) do %>
+          <tbody>
+            <tr>
+              <td data-th="Product">
+                <div class="row">
+                  <div class="col-sm-3 hidden-xs"><%= cl_image_tag order.cart.cart_items.first.package.photo, height: 70 %></div>
+                  <div class="col-sm-8 ml-3">
+                    <p><ins>Numéro de commande: <strong style="color: #82AE46"><%= order.id %></ins></strong></hp>
+                    <p> Livrasion: le <strong><%= order.day.strftime("%-d %B %Y") %><br></strong> Entre <strong><%= order.time_start.strftime("%H:%M") %> et <%= order.time_end.strftime("%H:%M") %></strong> <br> Près de: <strong><%= order.address%></strong></p>
+
+                  </div>
+                </div>
+              </td>
+              <td data-th="Price">
+                <div class="mt-5">
+                <strong><%= humanized_money_with_symbol(order.amount) %></strong>
+                </div>
+              </td>
+              <td data-th="Price">
+                <div class="mt-5"><strong style="color: blue; text-transform: capitalize"><%= order.status %></strong>
+
+                </div>
+                <p class="inline btn btn-success btn-sm mt-3"><%= link_to "Détails", order_path(order) %></p>
+              </td>
+            </tr>
+          </tbody>
+          <% end %>
+          <% end %>
+        </table>
       </div>
-      <div class="product__info">
-        <div class="title">
-          <h1>Numéro de commande : <%= order.id %></h1>
-        </div>
-        <div class="description">
-          <h3 class="order-status">Etat de commande : <strong><%= order.status%></strong></h3> <!-- Ici il faut regarder comment changer la color du texte en fonction de if :-->
-          <p><u><strong>Votre commande sera livré à côté de :  </strong></u></p>
-          <p><mark><%= order.address%></mark></p> <!-- Ici il faut split l'adresse à la virgule -->
-          <p>-Vous devrez la retirer le <mark><%= order.day&.strftime("%-d %B %Y") %></mark></p>
-          <p>-Votre créneau horraire choisi : De <mark><%= order.time_start&.strftime("%Hh%M") %> à <%= order.time_end&.strftime("%Hh%M") %></mark>
-          </p>
-          <p>Vous recevrez le détail de la commande par sms et par mail.</p>
-          <div class="price">
-            <span class ="price"><%= order.amount_cents / 100 %> €</span>
-          </div>
-        </div>
-        <p class="lead"><%= link_to "Détail de la commande", root_path, class: "btn-retour" %></p> <!-- Ici il faut modifier le root pour remettre vers la show mais le order_path marche pas, remarque : il y a uneroute et on est dans une boucle -->
-      </div>
-    </section>
-    <% end %>
+    </div>
   </div>
+</div>
