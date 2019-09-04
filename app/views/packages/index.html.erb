@@ -107,7 +107,12 @@
                   <% end %>
                 </div>
 
-                <div id="card-product-price"><h2><%= money_without_cents(package.price) %> €</h2></div>
+                <div class="card-product-price-number-people">
+                  <h3><%= package.number_people %> personnes</h3>
+
+
+                  <div id="card-product-price"><h1><%= money_without_cents(package.price) %> €</h1></div>
+                </div>
 
               </div>
 
