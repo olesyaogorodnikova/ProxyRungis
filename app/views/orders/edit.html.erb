@@ -1,13 +1,13 @@
 <div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path'vegetables_assort_meiitm.jpg', height: 600, width: 1200, crop: :fill %>')">
-  <h2 class = "mb-5 text-center"> Quand souhaitez vous récupérer votre commande ? </h2>
+  <h2 class = "mb-5 text-center"> Quand souhaitez-vous récupérer votre commande ? </h2>
   <div class="container">
-    <div class="form-wrapper" id= "form" style="width: 550px; margin: 0 auto;color: white; font-weight: bold">
+    <div class="form-wrapper" id= "form" style="width: 580px; margin: 0 auto;color: white; font-weight: bold">
       <%= simple_form_for @order do |f| %>
 
-        <%= f.input :day, as: :string, label: "Quel jour récupèreras-tu ta commande ?", required: true, input_html: {class: "datepicker"} %>
+        <%= f.input :day, as: :string, label: "Quel jour récupèrerez-vous votre commande ?", required: true, input_html: {class: "datepicker"} %>
         <%= f.input :time_start, as: :string, label: "A partir de quelle heure ?", required: true, input_html: {class: "timepicker"} %>
         <%= f.input :time_end, as: :string, label: "Jusqu'à quelle heure ?", required: true, input_html: {class: "timepicker"} %>
-        <%= f.input :address, as: :string, label: "Quelle est ton adresse ?", required: true, placeholder: "16 villa gaudelet" %>
+        <%= f.input :address, as: :string, label: "Quelle est votre adresse ?", required: true, placeholder: "16 villa gaudelet" %>
     </div>
     </div>
 
