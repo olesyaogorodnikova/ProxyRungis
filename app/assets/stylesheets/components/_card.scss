@@ -100,7 +100,7 @@ button:focus{
   }
 
   .card-product-cover-infos-price-button {
-    padding: 10px 20px;
+    padding: 14px 20px;
     text-align: center;
     background-color: $green;
     color: white;
@@ -116,6 +116,10 @@ button:focus{
   .card-product-cover-infos-price-button span {
     font-size: 25px;
     padding-left: 1px;
+  }
+
+  .card-product-cover-infos-price-button h3 {
+    padding-left: 17px;
   }
 
   #shopping-basket-icon-cover {
