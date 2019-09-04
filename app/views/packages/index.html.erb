@@ -57,7 +57,7 @@
               </div>
 
               <div class="modal-footer" id="button-validation-cart-item">
-                <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-primary btn-sm" %>
+                <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-flat-home btn-sm" %>
               </div>
             </div>
           </div>
@@ -80,9 +80,11 @@
         </div>
 
 
+
         <!-- Cards de packages form -->
         <div class="cards-index">
           <% @packages.each do |package| %>
+          <div data-aos="fade-in">
 
             <div class="card-product" id="card-product-parent">
 
@@ -147,6 +149,7 @@
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           <% end %>
         </div>

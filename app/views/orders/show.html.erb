@@ -5,12 +5,12 @@
   <div class="row" >
     <div class="col-md-8 mt-2" >
     <%= form_tag order_payments_path(@order) do %>
-      <h2 class ="offset-1 mb-4" style="color:#82AE46">Merci pour vos achats!</h2>
+      <h2 class ="mb-4" style="color:#82AE46">Détails de la commande: </h2>
       <div class="container">
         <table id="cart" class="table table-hover">
           <thead>
             <tr>
-              <th style="width:80%; padding-left:150px"><h5><strong>Description </strong></h5></th>
+              <th style="width:80%"><h5><strong>Produits </strong></h5></th>
               <th style="width:20%"><h5><strong>Prix</strong></h5></th>
               <th style="width:11%"><h5><strong>Statut</strong></h5></th>
             </tr>
@@ -36,7 +36,7 @@
                 </div>
               </td>
               <td data-th="Price">
-                <div class="mt-5"><strong style="color: blue; text-transform: capitalize"><%= @order.status %></strong>
+                <div class="mt-5"><strong style="color: #19AAEE; text-transform: capitalize"><%= @order.status %></strong>
 
                 </div>
               </td>
@@ -46,11 +46,12 @@
           <tfoot>
             <tr><td ></td>
               <td class="hidden-xs"><strong>TOTAL: <%= humanized_money_with_symbol(@order.amount) %></strong></td></tr>
+                        <p class="inline "><ins><%= link_to "Retour", dashboard_path %></ins>
+          </p>
           </tfoot>
 <tr></tr>
         </table>
-          <p class="inline "><%= link_to "Continuer des achats", packages_path %>
-          </p>
+
       </div>
     <% end %>
 
