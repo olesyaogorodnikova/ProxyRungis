@@ -5,6 +5,7 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  // padding-right: 50%;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -14,4 +15,5 @@
 .avatar-large {
   width: 56px;
   border-radius: 50%;
+  position: fixed;
 }

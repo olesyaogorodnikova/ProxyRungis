@@ -43,103 +43,12 @@ User.create!(
 puts 'a'
 
 a = Restaurant.new(
-    name: "Pitaya",
-    email: "pitaya@gmail.com",
-    password: "123456",
-    delivery_start_hour: "12:00",
-    delivery_end_hour: "19:00",
-    address: "121 Rue Oberkampf, 75011 Paris"
-    )
-a.save
-
-a = Restaurant.new(
-    name: "L'Estaminet",
-    email: "lestaminet@gmail.com",
-    password: "123456",
-    delivery_start_hour: "09:00",
-    delivery_end_hour: "14:00",
-    address: "116 Rue Oberkampf, 75011 Paris"
-    )
-a.save
-
-a = Restaurant.new(
-    name: "La Mère Poule",
-    email: "lamerpoule@gmail.com",
-    password: "123456",
-    delivery_start_hour: "11:00",
-    delivery_end_hour: "16:00",
-    address: "101 Rue Oberkampf, 75011 Paris"
-    )
-a.save
-
-a = Restaurant.new(
-    name: "Le Perchoir",
-    email: "auperchoir@gmail.com",
-    password: "123456",
-    delivery_start_hour: "11:00",
-    delivery_end_hour: "16:00",
-    address: "14 Rue Crespin du Gast, 75011 Paris"
-    )
-a.save
-
-a = Restaurant.new(
     name: "Au Chat Noir",
     email: "auchatnoir@gmail.com",
     password: "123456",
     delivery_start_hour: "11:00",
     delivery_end_hour: "16:00",
     address: "76 Rue Jean-Pierre Timbaud, 75011 Paris"
-    )
-a.save
-
-a = Restaurant.new(
-    name: "Bocamexa",
-    email: "auchatnoir@gmail.com",
-    password: "123456",
-    delivery_start_hour: "11:00",
-    delivery_end_hour: "16:00",
-    address: "95 Rue Oberkampf, 75011 Paris"
-    )
-a.save
-
-a = Restaurant.new(
-    name: "La cantine de Belleville",
-    email: "belleville@gmail.com",
-    password: "123456",
-    delivery_start_hour: "11:00",
-    delivery_end_hour: "16:00",
-    address: "108 Boulevard de Belleville, 75020 Paris"
-    )
-a.save
-
-a = Restaurant.new(
-    name: "Cannibale Café",
-    email: "cannibales@gmail.com",
-    password: "123456",
-    delivery_start_hour: "11:00",
-    delivery_end_hour: "16:00",
-    address: "93 Rue Jean-Pierre Timbaud, 75011 Paris"
-    )
-a.save
-
-
-a = Restaurant.new(
-    name: "Massale",
-    email: "massale@gmail.com",
-    password: "123456",
-    delivery_start_hour: "11:00",
-    delivery_end_hour: "16:00",
-    address: "5 rue Guillaume Bertrand, Paris, 75 75011"
-    )
-a.save
-
-a = Restaurant.new(
-    name: "Broken biscuits",
-    email: "brokenbiscuits@gmail.com",
-    password: "123456",
-    delivery_start_hour: "15:00",
-    delivery_end_hour: "22:00",
-    address: "10 passage Rochebrune, Paris, 75 75011"
     )
 a.save
 

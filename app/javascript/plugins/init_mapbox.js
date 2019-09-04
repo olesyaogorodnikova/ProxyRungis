@@ -70,6 +70,42 @@ const initMapbox = () => {
   }
 };
 
+function displayJourneyReshaped(map, coords) {
 
+    var coordsString = coords.join(';');
+
+    var typeRoute = 'driving';
+    var directionsRequest = 'https://api.mapbox.com/matching/v5/mapbox/'+typeRoute+'/' + coordsString + '?geometries=geojson&access_token=' + accessToken;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', directionsRequest);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+
+            var route = response.matchings[0].geometry;
+
+            map.addLayer({
+                id: 'journeyReshaped',
+                type: 'line',
+                source: {
+                    type: 'geojson',
+                    data: {
+                        type: 'Feature',
+                        geometry: route
+                    }
+                },
+                paint: {
+                    'line-color': "#3399ff",
+                    'line-width': 4,
+                    'line-opacity': 0.7
+                }
+            });
+        } else {
+
+            console.log('Request failed.  Returned status of ' + xhr.status);
+        }
+    };
+    xhr.send();
+}
 
 export { initMapbox };
