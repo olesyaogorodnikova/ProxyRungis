@@ -1,97 +1,98 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-   <div class="carousel-inner div-text-carrousel">
+  <div class="carousel-inner div-text-carrousel">
     <div class="text-center text-carrousel">
       <h1><strong>Proxy Rungis</strong></h1>
       <br>
-      <h3>
-        <br>
-        <strong>Des fruits et légumes de qualité, pas cher, juste en bas de chez toi!</strong>
-      </h3>
+      <br>
+      <h4><strong>Des fruits et légumes de qualité, pas cher, juste en bas de chez toi!</strong></h4>
       <br>
       <br>
       <br>
-      <div class="btn btn-lg btn-flat-home p-3 mt-5"> <%= link_to "VOIR NOS PRODUITS", packages_path %></div>
+      <div class="btn btn-lg btn-flat-home p-3 mt-5"> <%= link_to "VOIR NOS PRODUITS", packages_path %>
+      </div>
     </div>
+    <div class="carousel-item active">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= cl_image_path'vegetables_assort_meiitm.jpg', height: 600, width: 1200, crop: :fill %>')">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path'ont5vs0mos0zbyhbkzi6.jpg', height: 600, width: 1200, crop: :fill %>')">
 
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path'sogf4wdf6efidnfa5cki.jpg', height: 600, width: 1200, crop: :fill %>')">
+      </div>
+    </div>
+  </div>
+</div>
 
-     <div class="carousel-item active">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= cl_image_path'vegetables_assort_meiitm.jpg', height: 600, width: 1200, crop: :fill %>')">
+<br>
+<br>
+
+<div class="container mt-5 mb-5" >
+  <div class="row no-gutters ftco-services"; data-aos="fade-up">
+
+    <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+      <div class="media block-6 services mb-md-0 mb-4">
+        <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background:#E4B2D6">
+          <i class="fas fa-seedling fa-3x" style="color: white"></i>
         </div>
-     </div>
-     <div class="carousel-item">
-       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path'ont5vs0mos0zbyhbkzi6.jpg', height: 600, width: 1200, crop: :fill %>')">
-
-       </div>
-     </div>
-     <div class="carousel-item">
-       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path'sogf4wdf6efidnfa5cki.jpg', height: 600, width: 1200, crop: :fill %>')">
-       </div>
-     </div>
-   </div>
-</div>
-
-<br>
-<br>
-
-</div>
-
-<div class="container" >
-        <div class="row no-gutters ftco-services"; data-aos="fade-up">
-          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background:#E4B2D6">
-                <i class="fas fa-seedling fa-3x" style="color: white"></i>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Livraison gratuite</h3>
-                <span>Sur commande plus de 100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background: #FDAD75">
-                <i class="fas fa-seedling fa-3x" style="color: white"></i>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Toujours frais</h3>
-                <span>Produit bien paquet</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
-            <div class="media block-6 services mb-md-0 mb-4">
-               <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background: #A2D1E1">
-                <i class="fas fa-seedling fa-3x" style="color: white"></i>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Qualité supérieure</h3>
-                <span>Produits de qualité</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
-            <div class="media block-6 services mb-md-0 mb-4">
-              <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background: #C2D771">
-                <i class="fas fa-seedling fa-3x" style="color: white"></i>
-              </div>
-              <div class="media-body">
-                <h3 class="heading">Support</h3>
-                <span>24/7 Support</span>
-              </div>
-            </div>
-          </div>
+        <div class="media-body">
+          <h3 class="heading">Livraison gratuite</h3>
+          <span>Sur commande plus de 100 €</span>
         </div>
       </div>
-      <br>
-      <br>
+    </div>
+
+    <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+      <div class="media block-6 services mb-md-0 mb-4">
+        <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background: #FDAD75">
+          <i class="fas fa-seedling fa-3x" style="color: white"></i>
+        </div>
+        <div class="media-body">
+          <h3 class="heading">Toujours frais</h3>
+          <span>Produit bien paquet</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+      <div class="media block-6 services mb-md-0 mb-4">
+         <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background: #A2D1E1">
+          <i class="fas fa-seedling fa-3x" style="color: white"></i>
+        </div>
+        <div class="media-body">
+          <h3 class="heading">Qualité supérieure</h3>
+          <span>Produits de qualité</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+      <div class="media block-6 services mb-md-0 mb-4">
+        <div class="icon d-flex justify-content-center align-items-center mb-2"; style = "background: #C2D771">
+          <i class="fas fa-seedling fa-3x" style="color: white"></i>
+        </div>
+        <div class="media-body">
+          <h3 class="heading">Écologique</h3>
+          <span>Produits écologique</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<br>
+<br>
 
 
 <div class="container mt-5" >
-<div class="card-deck">
-  <div class="card">
-    <div class="card-img-top not-hero", style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('<%= cl_image_path'product-3_cajnd3.jpg', height: 280, width: 330, crop: :thumb %>')">
+  <div class="card-deck">
+
+    <div class="card">
+      <div class="card-img-top not-hero", style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('<%= cl_image_path'product-3_cajnd3.jpg', height: 280, width: 330, crop: :thumb %>')">
         <div class="card-body">
           <h4 class="card-title"><i class="fas fa-seedling", style="color: #82AE46"></i> Frais</h4>
           <h5 class="card-text mt-5 text-center"></h5>
@@ -101,10 +102,11 @@
           <br>
           <h5 class="card-text mt-5">Manger des fruits et légumes <strong> frais</strong> n'a jamais été aussi <strong>simple!</strong></h5>
         </div>
+      </div>
     </div>
-</div>
-  <div class="card">
-    <div class="card-img-top", style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('<%= cl_image_path'product-6_gx117p.jpg', height: 300, width: 330, crop: :thumb %>')">
+
+    <div class="card">
+      <div class="card-img-top", style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('<%= cl_image_path'product-6_gx117p.jpg', height: 300, width: 330, crop: :thumb %>')">
         <div class="card-body">
           <h4 class="card-title"><i class="fas fa-seedling", style="color: #82AE46"></i> Top qualité</h4>
           <h5 class="card-text mt-5 text-center"></h5>
@@ -113,40 +115,41 @@
           <br>
           <br>
           <h5 class="card-text mt-5">Des fruits et légumes <strong>de qualité, pas cher, juste en bas de chez toi !</strong></h5>
-
         </div>
+      </div>
     </div>
-</div>
-  <div class="card">
-    <div class="card-img-top not-hero", style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('<%= cl_image_path'product-7_sacypb.jpg', height: 280, width: 320, crop: :thumb %>')">
-        <div class="card-body">
-          <h4 class="card-title"><i class="fas fa-seedling", style="color: #82AE46"></i> Rapide</h4>
-          <h5 class="card-text mt-5 text-center"></h5>
-          <br>
-          <br>
-          <br>
-          <br>
-          <h5 class="card-text mt-5">C'est le bon plan <strong>rapide et sans prise de tête!</strong></h5>
-        </div>
-    </div>
-</div>
 
+    <div class="card">
+      <div class="card-img-top not-hero", style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('<%= cl_image_path'product-7_sacypb.jpg', height: 280, width: 320, crop: :thumb %>')">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fas fa-seedling", style="color: #82AE46"></i> Rapide</h4>
+            <h5 class="card-text mt-5 text-center"></h5>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h5 class="card-text mt-5">C'est le bon plan <strong>rapide et sans prise de tête!</strong></h5>
+          </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <div class ="container mt-5 center">
   <br>
   <br>
-  <h3 style="text-transform: uppercase"><strong style="color: #82AE46"> Comment ça marche?</strong></h3>
+  <h4 style="text-transform: uppercase"><strong style="color: #82AE46"> Comment ça marche?</strong></h4>
   <br>
-  <br>
+
 
   <br>
    <div style="width: 1100px">
-    <h3><i class="fas fa-seedling mr-3", style="color: #82AE46"></i> <strong>Je choisis </strong>mon panier de saison.</h3>
+    <h4><i class="fas fa-seedling mr-3", style="color: #82AE46"></i> <strong>Vous choisissez </strong>votre panier de saison.</h4>
     <br>
-    <h3><i class="fas fa-seedling mr-3", style="color: #82AE46"></i> <strong>Vous indiquez</strong> où vous habitez, et quand vous voulez récupérer le panier.</h3>
+    <h4><i class="fas fa-seedling mr-3", style="color: #82AE46"></i> <strong>Vous indiquez</strong> où vous habitez, et quand vous voulez récupérer le panier.</h3>
     <br>
-    <h3><i class="fas fa-seedling mr-3", style="color: #82AE46"></i> <strong> Vous récupérerez </strong> votre panier frais à l'endroit convenu.</h3>
+    <h4><i class="fas fa-seedling mr-3", style="color: #82AE46"></i> <strong> Vous récupérerez </strong> votre panier frais à l'endroit convenu.</h4>
    </div>
   <br>
   <br>
@@ -170,8 +173,8 @@
   <br>
   <br>
   <br>
-  <br>
-  <h3 style="text-transform: uppercase"><strong style="color: #82AE46"> Nos valeurs: </strong></h3>
+
+  <h4 style="text-transform: uppercase"><strong style="color: #82AE46"> Nos valeurs: </strong></h4>
   <br>
 
     <div class="container">
@@ -179,7 +182,7 @@
 
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
 
-          <div class="box-part text-center"  style="box-shadow: 1px 2px 4px rgba(0, 0, 0, .5)"><i class="fas fa-atom fa-3x mb-3" ; style="color: #82AE46"></i>
+          <div class="box-part text-center"  style="box-shadow: 1px 2px 4px rgba(0, 0, 0, .5); height: 350px"><i class="fas fa-atom fa-3x mb-3" ; style="color: #82AE46"></i>
 
             <div class="title"><h4>Notre astuce</h4>
             </div>
@@ -193,7 +196,7 @@
 
          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
-          <div class="box-part text-center" style=" box-shadow: 1px 2px 4px rgba(0, 0, 0, .5)">
+          <div class="box-part text-center" style=" box-shadow: 1px 2px 4px rgba(0, 0, 0, .5); height: 350px">
 
             <i class="fas fa-bullseye fa-3x mb-3"; style="color: #82AE46"></i>
 
@@ -203,13 +206,13 @@
 
             <div class="text px-3">
               <span>Notre mission, c'est de vous proposer des fruits et légumes toujours meilleurs, toujours moins cher et toujours plus proche de chez vous.</span>
-            </div>
+             </div>
             </div>
         </div>
 
          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
-          <div class="box-part text-center" style="box-shadow: 1px 2px 4px rgba(0, 0, 0, .5)">
+          <div class="box-part text-center" style="box-shadow: 1px 2px 4px rgba(0, 0, 0, .5); height: 350px">
 
              <i class="fab fa-leanpub fa-3x mb-3"; style="color: #82AE46"></i>
 
@@ -220,6 +223,7 @@
             <div class="text">
               <span>Nous travaillons avec les meilleurs producteurs de Rungis afin de vous proposer tous les jours des produits frais et de qualité à un prix raisonnable </span>
               <br>
+              <br>
             </div>
 
            </div>
@@ -229,17 +233,15 @@
 
     </div>
 
+<br>
+  <br>
+  <br>
+  <h4 style="text-transform: uppercase"><strong style ="color: #82AE46"> Qui sommes-nous ?</strong></h4>
 
-  <br>
-  <h3 style="text-transform: uppercase"><strong style ="color: #82AE46"> Qui sommes-nous ?</strong></h3>
-
-  <br>
-  <h4 style="color: gray">Nous sommes 4 développeurs parisiens en quête de fruits et légumes de qualité.</h4>
-  <br>
 
   </div>
 
-  <div class ="container mt-5">
+  <div class ="container mt-5 mb-5">
     <!-- Grid row -->
   <div class="row">
     <!--Grid column-->
@@ -255,12 +257,12 @@
 
         </div>
       </div>
-        <div class="card-body mt-3">
+        <div class="card-body mt-3" style ="height: 230px">
           <!--Name-->
-          <h4 class="font-weight-bold mb-4 text-center">Christophe B.</h4>
+          <h5 class="font-weight-bold mb-4 text-center">Christophe B.</h5>
           <hr>
           <!--Quotation-->
-          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Après 5 ans dans le secteur pubique, Christophe a décidé de se réorienter, il est actuellement Lead dévelloper pour Proxy Rungis !</p>
+          <p class="dark-grey-text mt-4" style="font-size: 13px"><i class="fa fa-quote-left pr-2"></i>Christophe a fait Le Wagon.</p>
         </div>
       </div>
       <!--Card-->
@@ -279,12 +281,13 @@
           <%= cl_image_tag("goti_rz0xu6.png", class: "rounded-circle img-fluid")%>
 
         </div></div>
-        <div class="card-body mt-3">
+        <div class="card-body mt-3" style ="height: 230px">
           <!--Name-->
-          <h4 class="font-weight-bold mb-4 text-center">  Gauthier H.</h4>
+          <h5 class="font-weight-bold mb-4 text-center">  Gauthier H.</h5>
           <hr>
           <!--Quotation-->
-          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Après plusieurs années dans la restauration, gauthier a décidé de mettre ses connaissances au service de Proxy Rungis.</p>
+          <p class="dark-grey-text mt-4"style="font-size: 13px"><i class="fa fa-quote-left pr-2"></i>Après plusieurs années dans la restauration, gauthier a décidé de mettre ses connaissances au service de Proxy Rungis.</p>
+
         </div>
       </div>
       <!--Card-->
@@ -292,7 +295,7 @@
     <!--Grid column-->
 
     <!--Grid column-->
-    <div class="col-lg-3 col-md-12 mb-md-0 mb-4">
+    <div class="col-lg-3 col-md-12 mb-md-0 mb-5">
       <!--Card-->
       <div class="card testimonial-card" style="box-shadow: 1px 2px 4px rgba(0, 0, 0, .5)">
         <!--Background color-->
@@ -303,12 +306,12 @@
           <%= cl_image_tag("cont_h8sgxz.png", class: "rounded-circle img-fluid")%>
 
         </div></div>
-        <div class="card-body mt-3">
+        <div class="card-body mt-3" style ="height: 230px">
           <!--Name-->
-          <h4 class="font-weight-bold mb-4 text-center">Quentin D.</h4>
+          <h5 class="font-weight-bold mb-4 text-center">Quentin D.</h5>
           <hr>
           <!--Quotation-->
-          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Ancien commercial dans une grande multinationale, Quentin met à disposition son expertise afin d'obtenir les meilleurs accords avec les producteurs de Rungis. </p>
+          <p class="dark-grey-text mt-4"style="font-size: 13px"><i class="fa fa-quote-left pr-2"></i>Ancien commercial dans une grande multinationale, Quentin met à disposition son expertise afin d'obtenir les meilleurs accords avec les producteurs de Rungis. </p>
         </div>
       </div>
       <!--Card-->
@@ -324,26 +327,22 @@
         <div class="avatar-largee mx-auto white mt-2">
           <%= cl_image_tag("ol_me3iho.png", class: "rounded-circle img-fluid")%>
 
-        </div></div>
-        <div class="card-body mt-3">
+        </div>
+        </div>
+        <div class="card-body mt-3" style ="height: 230px">
           <!--Name-->
-          <h4 class="font-weight-bold mb-4 text-center">Olesya O.</h4>
+          <h5 class="font-weight-bold mb-4 text-center">Olesya O.</h5>
           <hr>
           <!--Quotation-->
-          <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>Anciennement ingénieure en Robotic, Olesya décide de quitter sa Suisse Natale afin de rejoindre Proxy Rungis en tant que dévellepeur fullstack.</p>
+          <p class="dark-grey-text mt-4" style="font-size: 13px"><i class="fa fa-quote-left pr-2"></i>Anciennement ingénieure en Robotic, Olesya décide de quitter sa Suisse Natale afin de rejoindre Proxy Rungis en tant que dévellepeur fullstack.</p>
         </div>
       </div>
       <!--Card-->
     </div>
   </div>
-  </div>
-  <!-- Grid row -->
-</div>
-  <br>
-  <br>
-  <br>
-  <br>
-
+<br>
+<br>
+<br>
 
 
 

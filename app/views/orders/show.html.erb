@@ -1,16 +1,58 @@
-<div class="jumbotron text-center contener">
-  <h1 class="display-3">Merci!</h1>
-  <h1> Votre commande est validée!</h1>
-  <h3>Status: <strong style="color: green"><%= @order.status %></strong></h3>
-  <h3>Amount: <%= humanized_money_with_symbol(@order.amount) %></h3>
-  <br>
-  <p class="lead"><strong>Vous allez recevoir par email le détail de votre commande</strong></p>
-  <br>
-  <p>
-    Having trouble? <a href="">Contact us</a>
-  </p>
-  <p class="lead"><%= link_to "Continue Shopping", packages_path, class: "btn btn-warning" %>
-  </p>
-  <p class="lead"><%= link_to "Voir mes commandes", dashboard_path, class: "btn btn-warning" %>
-  </p>
+  <div class="jumbotron text-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('<%= cl_image_path'veggi_lt3fr1.jpg', height: 300, width: 1200, crop: :fill %>'); color:white">
+    </div>
+  <div class="container mt-2">
+
+  <div class="row" >
+    <div class="col-md-8 mt-2" >
+    <%= form_tag order_payments_path(@order) do %>
+      <h2 class ="offset-1 mb-4" style="color:#82AE46">Merci pour vos achats!</h2>
+      <div class="container">
+        <table id="cart" class="table table-hover">
+          <thead>
+            <tr>
+              <th style="width:80%; padding-left:150px"><h5><strong>Description </strong></h5></th>
+              <th style="width:20%"><h5><strong>Prix</strong></h5></th>
+              <th style="width:11%"><h5><strong>Statut</strong></h5></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% current_user.cart.cart_items.each do |item| %>
+            <tr>
+              <td data-th="Product">
+                <div class="row">
+                  <div class="col-sm-3 hidden-xs"><%= cl_image_tag item.package.photo, height: 80 %></div>
+                  <div class="col-sm-8 ml-3">
+
+                    <p><strong> <%= item.package.name%></strong> </p>
+                    <p><%= item.package.description%></p>
+                    <p> Livrasion: le <strong><%= @order.day.strftime("%-d %B %Y") %><br></strong> entre <strong><%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong> à <strong><%= @order.address%></strong></p>
+
+                  </div>
+                </div>
+              </td>
+              <td data-th="Price">
+                <div class="mt-5">
+                <%= item.package.price %> € x <%=item.quantity %>
+                </div>
+              </td>
+              <td data-th="Price">
+                <div class="mt-5"><strong style="color: blue; text-transform: capitalize"><%= @order.status %></strong>
+
+                </div>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+          <tfoot>
+            <tr><td ></td>
+              <td class="hidden-xs"><strong>TOTAL: <%= humanized_money_with_symbol(@order.amount) %></strong></td></tr>
+          </tfoot>
+<tr></tr>
+        </table>
+          <p class="inline "><%= link_to "Continuer des achats", packages_path %>
+          </p>
+      </div>
+    <% end %>
+
+</div>
 </div>
