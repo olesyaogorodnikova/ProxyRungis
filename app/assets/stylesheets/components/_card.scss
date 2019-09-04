@@ -93,6 +93,10 @@ button:focus{
     justify-content: space-around;
     padding-top: 3px;
     padding-left: 10px;
+
+    i {
+      color: $green;
+    }
   }
 
   .card-product-cover-infos-price-button {
