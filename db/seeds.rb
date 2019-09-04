@@ -149,7 +149,7 @@ b = Package.new(
     name: "Petit panier bio de la semaine",
     description: "1 salade frisée, 1 aubergine, 1 concombre, 3 poivrons, 4 tomates, 2 échalottes, 4 bananes",
     price: 8,
-    category: "Fruits & Legumes",
+    category: "Fruits & legumes",
     bio: true
         )
 b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567163928/Fruits%20and%20Vegetables%20Baskets/4d68fd2976639205ef587864e9054977-2018-04-14_deiduz.jpg"
