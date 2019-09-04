@@ -71,7 +71,8 @@
                 <option value="" disabled selected>Sélectionner</option>
                 <option value="Fruits" <%= 'selected' if params[:category] == "Fruits" %>>Fruits</option>
                 <option value="Legumes" <%= 'selected' if params[:category] == "Legumes" %>>Légumes</option>
-                <option value="Fruits & Legumes" <%= 'selected' if params[:category] == "Fruits & Legumes" %>>Fruits & légumes</option>
+                <option value="Fruits & legumes" <%= 'selected' if params[:category] == "Fruits & legumes" %>>Fruits & légumes</option>
+                <option value="all" <%= 'selected' if params[:category] == "all" %>>Tous nos paniers</option>
               </select>
               <input type="checkbox" name="bio" value=true id="ckeck-box-bio" <%= "checked" if params[:bio] == "true" %>>
               <label id="label-bio">Bio</label>

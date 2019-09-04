@@ -6,7 +6,10 @@ class PackagesController < ApplicationController
     @cart_item = CartItem.new
     if params[:category]
       @packages = Package.where(category: params[:category])
+      if params[:category] == "all"
+        @packages = Package.all
       end
+    end
     if params[:bio]
       @packages = @packages.search_by_bio(true)
     end
