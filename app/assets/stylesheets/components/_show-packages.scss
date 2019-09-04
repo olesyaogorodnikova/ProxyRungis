@@ -51,7 +51,7 @@
     padding-bottom: 0px;
   }
   input {
-    margin-top: 17px;
+    margin-top: 13px;
   }
   label {
     margin-top: 10px;
@@ -126,7 +126,7 @@ img {
 }
 
 #modal-package-description-price {
-  display: flex;
+  // display: flex;
 }
 
 #modal-package-description {
@@ -140,6 +140,12 @@ img {
 
 #modal-package-price {
   text-align: center;
-  padding-left: 70px;
-  padding-top: 37px;
+  // padding-left: 70px;
+  // padding-top: 37px;
+}
+
+.btn-validation-quantity {
+  width: 100%;
+  background-color: $green;
+
 }

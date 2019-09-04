@@ -73,7 +73,7 @@
                 <option value="Legumes" <%= 'selected' if params[:category] == "Legumes" %>>Légumes</option>
                 <option value="Fruits & Legumes" <%= 'selected' if params[:category] == "Fruits & Legumes" %>>Fruits & légumes</option>
               </select>
-              <input type="checkbox" name="bio" value=true <%= "checked" if params[:bio] == "true" %>>
+              <input type="checkbox" name="bio" value=true id="ckeck-box-bio" <%= "checked" if params[:bio] == "true" %>>
               <label id="label-bio">Bio</label>
              <button type="submit" class="btn btn-primary my-1 bt-sm" id="button-validation-selection">Valider</button>
           </form>
@@ -84,18 +84,16 @@
         <!-- Cards de packages form -->
         <div class="cards-index">
           <% @packages.each do |package| %>
+
           <div data-aos="fade-in">
-
             <div class="card-product" id="card-product-parent">
-
               <%= cl_image_tag package.photo, crop: :fit %>
-
               <div class="card-product-infos" id="card-product-infos">
                 <div id="card-product-package-name"><h2><%= package.name %></h2></div>
 
                 <div id="card-product-price-category-bio">
                   <% if params[:bio] == "true" %>
-                    <div class="product-tag bg-green">Bio</div>
+                    <div class="product-tag bg-green mr-1">Bio</div>
                   <% end %>
                   <% if package.category == "Fruits & legumes" %>
                     <div class="product-tag bg-orange">Fruits & légumes</div>
@@ -108,15 +106,33 @@
                   <% end %>
                 </div>
 
-                <div id="card-product-price"><h2><%= package.price %> €</h2></div>
+                <div id="card-product-price"><h2><%= money_without_cents(package.price) %> €</h2></div>
 
+              </div>
 
-                <div id="button-modal-show-packages">
-                   <!-- Button modal Show Package -->
-                  <div class="card-package-button-details">
-                    <button type="button" class="btn btn-primary btn-sm" id="card-package-button-details" data-toggle="modal" data-target="#exampleModal-<%= package.id%>">Ajouter</button>
+              <div class="card-product-cover">
+
+                <div class="card-product-cover-infos">
+                  <div class="card-product-cover-infos-description">
+                    <div class="card-product-cover-infos-description-title">
+                      <h5>Ce panier contient:</h5>
+                    </div>
+                    <div class="card-product-cover-infos-description-composition">
+                      <% products = package.description.split(",") %>
+                      <% products.each do |product|%>
+                        <p><i class="fas fa-check" id="shopping-basket-icon-cover"></i> <%= product %></p>
+                      <% end %>
+                    </div>
+                  </div>
+
+                  <div class="card-product-cover-infos-price-button">
+                    <h3><%= money_without_cents(package.price) %><span>€</span></h3>
+
+                    <i class="fas fa-cart-plus" data-toggle="modal" data-target="#exampleModal-<%= package.id%>"></i>
+
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -126,18 +142,10 @@
 
                   <div class="modal-body text-center">
                     <h3 class="modal-title" id="modal-card-package"> <%= package.name %></h3>
-                    <h5>Composition du panier:</h5>
-
 
                     <div id="modal-package-description-price">
-                      <div id="modal-package-description">
-                        <% products = package.description.split(",") %>
-                        <% products.each do |product|%>
-                        <p class="modal-title" id="exampleModalLabel">- <%= product %></p>
-                        <% end %>
-                      </div>
                       <div>
-                        <h3 class="modal-title" id="modal-package-price"> <%= package.price %>€</h3>
+                        <h3 class="modal-title" id="modal-package-price"> <%= money_without_cents(package.price) %>€</h3>
                       </div>
                     </div>
                   </div>
