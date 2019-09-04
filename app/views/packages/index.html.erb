@@ -88,7 +88,8 @@
 
           <div data-aos="fade-in">
             <div class="card-product" id="card-product-parent">
-              <%= cl_image_tag package.photo, crop: :fit %>
+              <div class="card-product-image" style="background-image: url('<%= cl_image_path package.photo, crop: :fit %>')"></div>
+
               <div class="card-product-infos" id="card-product-infos">
                 <div id="card-product-package-name"><h2><%= package.name %></h2></div>
 
@@ -109,9 +110,7 @@
 
                 <div class="card-product-price-number-people">
                   <h3><%= package.number_people %> personnes</h3>
-
-
-                  <div id="card-product-price"><h1><%= money_without_cents(package.price) %> €</h1></div>
+                  <div class="card-product-price"><%= money_without_cents(package.price) %> €</div>
                 </div>
 
               </div>

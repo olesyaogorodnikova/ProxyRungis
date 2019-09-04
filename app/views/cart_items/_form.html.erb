@@ -1,4 +1,18 @@
 <%= simple_form_for([ package, cart_item ]) do |form| %>
   <%= form.input :quantity, as: :integer, input_html: { min: '0', step: 'any' }, label: 'Indiquez une quantité:' %>
+  <div class="quantity-form-cart-items">
+    <div class="quantity-form-cart-items-decrease">
+      <h2>-</h2>
+    </div>
+
+    <div class="quantity-form-cart-items-first">
+      <h2>1</h2>
+    </div>
+
+    <div class="quantity-form-cart-items-increase">
+      <h2>+</h2>
+    </div>
+  </div>
+
   <%= form.button :submit, "Valider", class: "btn-validation-quantity"%>
 <% end %>
