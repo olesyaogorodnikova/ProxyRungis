@@ -1,4 +1,4 @@
-<div id="banner-index-packages" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= cl_image_path'http://res.cloudinary.com/dhf3phkaa/image/upload/v1567519578/yoqd8ks471nbiy1etl3b.jpg', height: 600, width: 1200, crop: :fill %>')">
+<div id="banner-index-packages" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= cl_image_path'https://res.cloudinary.com/dhf3phkaa/image/upload/v1567520602/qo2mgx1xzqggjuie5c1f.jpg', height: 600, width: 1200, crop: :fill %>')">
     <h1 class="text-center" id="title-index-packages">Nos paniers de fruits et légumes de saison</h1>
   </div>
 
@@ -57,7 +57,7 @@
               </div>
 
               <div class="modal-footer" id="button-validation-cart-item">
-                <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-primary btn-sm" %>
+                <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-flat-home btn-sm" %>
               </div>
             </div>
           </div>
@@ -80,9 +80,12 @@
         </div>
 
 
+
         <!-- Cards de packages form -->
         <div class="cards-index">
           <% @packages.each do |package| %>
+
+          <div data-aos="fade-in">
             <div class="card-product" id="card-product-parent">
               <%= cl_image_tag package.photo, crop: :fit %>
               <div class="card-product-infos" id="card-product-infos">
@@ -154,6 +157,7 @@
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           <% end %>
         </div>

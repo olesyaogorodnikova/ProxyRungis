@@ -2,7 +2,7 @@
   <div class="row" >
     <div class="col-md-8 mt-4" >
     <%= form_tag order_payments_path(@order) do %>
-      <h2 class ="offset-5 mb-4" style="color:#82AE46">Check-Out</h2>
+      <h2 class ="offset-4 mb-4" style="color:#82AE46">Check-Out</h2>
       <div class="container">
         <table id="cart" class="table table-hover">
           <thead>
@@ -50,8 +50,9 @@
         </table>
       </div>
     <% end %>
+<div data-aos="zoom-in-up" data-aos-duration= "1000">
     <div class="container">
-  <div class="ml-2 mt-4"
+  <div class="ml-2 mt-4 mb-4"
   id="map"
   data-markers="<%= @marker_address.to_json %>";
   data-restaurants="<%= @markers.to_json %>";
@@ -60,11 +61,14 @@
   </div>
 </div>
     </div>
+</div>
     <div class="col-md-4" id="cart-table-st">
+
       <div class="card-category content mt-2 pt-2 pb-2" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path'fruit_basket_dfayvi.webp' %>'); height: 400px">
-        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @user.address if !@user.address.nil? %>
+        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @order.address if !@order.address.nil? %>
         <br><br>le <%= I18n.l(@order.day, format: :long, locale: :'fr') %><br>entre <%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong>.</p>
       </div>
-    </div>
+      </div>
+
 </div>
 
