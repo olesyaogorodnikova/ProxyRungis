@@ -1,30 +1,31 @@
-<div id="banner-index-packages" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<%= cl_image_path'http://res.cloudinary.com/dhf3phkaa/image/upload/v1567155701/jjedbku3hfd6vgwyc4ah.jpg', height: 800, width: 1200, crop: :fill %>')">
-    <h1 class="text-center" id="title-index-packages">Vos Achats</h1>
+<div id="banner-index-packages" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path'http://res.cloudinary.com/dhf3phkaa/image/upload/v1567155701/jjedbku3hfd6vgwyc4ah.jpg', height: 800, width: 1200, crop: :fill %>')">
+    <h2 class="text-center" id="title-index-packages">Vos Achats</h2>
   </div>
 <div class="container mt-2">
-  <div class="flex-dashboard">
 
-    <div class="row" >
-      <div class="col-md-2"> </div>
-      <div class="col-md-8 mt-2 justify-content-center" >
-        <table id="cart" class="table table-hover">
+    <div class="row justify-content-center" >
+
+      <div class="col-md-8 mt-2" >
+
+        <table id="dash" class="table table-hover">
           <thead>
             <tr>
-              <th style="width:80%"><h5><strong>Description </strong></h5></th>
+              <th style="width:90%"><h5><strong> Description </strong></h5></th>
               <th style="width:20%"><h5><strong>Prix</strong></h5></th>
-              <th style="width:11%"><h5><strong>Statut</strong></h5></th>
+              <th style="width:10%"><h5><strong>Statut</strong></h5></th>
             </tr>
           </thead>
+
           <% @myorders.each do |order| %>
           <%= form_tag order_payments_path(order) do %>
           <tbody>
             <tr>
               <td data-th="Product">
-                <div class="row" style= "text-center">
-                  <div class="col-sm-3 hidden-xs"><%= cl_image_tag order.cart.cart_items.first.package.photo, height: 70 %></div>
+                <div class="row">
+                  <div class="col-sm-3 hidden-xs"><%= cl_image_tag order.cart.cart_items.first.package.photo, width: 150 %></div>
                   <div class="col-sm-8 ml-3">
-                    <p><ins>Commande numéro : <strong style="color: #82AE46"><%= order.id %></ins></strong></hp>
-                    <p> A récupérer le : <strong><%= l(order.day, format: '%d %B %Y', locale: 'fr') %><br></strong> Entre <strong><%= order.time_start.strftime("%H:%M") %> et <%= order.time_end.strftime("%H:%M") %></strong> <br> A l'adresse : <strong><%= order.address_end%></strong></p>
+                    <p class="commande commande-number"><ins style="color: #82AE46"><strong style="color: #82AE46">Commande numéro : <%= order.id %></ins></strong></hp>
+                    <p class="commande"> A récupérer le : <strong><%= l(order.day, format: '%d %B %Y', locale: 'fr') %><br></strong> Entre: <strong><%= order.time_start.strftime("%H:%M") %> et <%= order.time_end.strftime("%H:%M") %></strong> <br> A l'adresse: <br><strong><%= order.address_end%></strong></p>
                   </div>
                 </div>
               </td>
@@ -34,7 +35,7 @@
                 </div>
               </td>
               <td data-th="Price">
-                <div class="mt-5"><strong style="color: #19AAEE; text-transform: capitalize"><%= order.status %></strong>
+                <div class="mt-5", style="text-align: center"><strong style="color: #128EE4; text-transform: capitalize; border:1px solid #128EE4; padding: 0.25rem 0.5rem; border-radius:2px; "><%= order.status %></strong>
                 <p class="inline btn btn-success btn-sm mt-3"><%= link_to "Détails", order_path(order) %></p>
               </td>
             </tr>
@@ -45,4 +46,4 @@
       </div>
     </div>
   </div>
-</div>
+

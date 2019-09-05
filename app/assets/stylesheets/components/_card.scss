@@ -251,7 +251,7 @@ button:focus{
 
  .content {
   position: absolute; /* Position the background text */
-  bottom: 5em;
+  bottom: 4em;
   left: 0em; /* At the bottom. Use top:0 to append it to the top */
   background: rgb(154,205,50); /* Fallback color */
   background: rgba(65,87,35, 0.7); /* Black background with 0.5 opacity */
@@ -366,6 +366,12 @@ button:focus{
   height: 300px;
 }
 
+#banner-index-packages h2{
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  
 .quantity-form-cart-items {
   display: flex;
   justify-content: center;
@@ -437,6 +443,7 @@ button:focus{
   margin: 0 !important;
   //text-align: center;
   padding-bottom: 19px;
+  text-align: center;
 }
 
 .home-card-img {
@@ -446,6 +453,15 @@ button:focus{
 
 .image-icons {
   filter: none;
-  width:250px;
-  height:250px;
+  width: 100px;
+  height: 100px;
+  margin-top: -70px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 15PX;
+    background: white;
+    box-shadow: 2px 1px 2px gray;
+
 }

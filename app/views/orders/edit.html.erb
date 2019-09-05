@@ -5,7 +5,6 @@
   <div>
     <table class="table table text-center" id="table-modal-shopping-basket">
       <thead>
-        <th scope="col"></th>
         <th scope="col">Nom du panier</th>
         <th scope="col">Quantité</th>
         <th scope="col">Prix unitaire</th>
@@ -15,7 +14,6 @@
     <% current_user.cart.cart_items.each do |cart_itemem| %>
       <tbody>
         <tr data-cart-item-id="<%= cart_itemem.id %>">
-           <td></td>
            <td><%= cart_itemem.package.name %></td>
            <td><%= cart_itemem.quantity  %></td>
            <td><%= cart_itemem.package.price %> €</td>
@@ -45,7 +43,7 @@
         <%= f.input :time_start, as: :string, placeholder: "De : 15h00", label: "A partir de quelle heure ?", required: true, input_html: {class: "timepicker"}, wrapper_html: {class: "schedule-input ml-1"} %>
         <%= f.input :time_end, as: :string, placeholder: "A : 17h00", label: "Jusqu'à quelle heure ?", required: true, input_html: {class: "timepicker"}, wrapper_html: {class: "schedule-input ml-1 mr-1"} %>
         <%= f.input :address_start, as: :string, label: "Quelle est votre adresse ?", required: true, placeholder: "16 villa gaudelet" %>
-        <%= f.button :submit, "Valider", class: "btn btn-lg btn-flat-home ml-4" %>
+        <%= f.button :submit, "Valider", class: "btn btn-lg btn-flat-home ml-2" %>
       <% end %>
     </div>
   </div>
