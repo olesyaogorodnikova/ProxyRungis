@@ -5,6 +5,7 @@
   form {
     justify-content: center;
   }
+  width: 94%;
 }
 
 #form label {
@@ -30,4 +31,54 @@
 #tableau-recap {
   background-color: white;
   border-radius: 10px;
+  width: 680px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+#table-modal-shopping-basket th {
+  padding-top: 10px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #82AE46;
+}
+
+#table-modal-shopping-basket td {
+
+    font-size: 15px;
+    padding-top: 10px;
+
+  }
+
+
+#table-modal-shopping-basket td th {
+
+    font-size: 15px;
+    padding-top: 10px;
+
+}
+
+#table td {
+
+    padding: 0.75rem;
+    padding-top: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #82AE46;
+
+}
+
+.table th {
+
+    padding: 0.75rem;
+    padding-top: 0.75rem;
+    vertical-align: top;
+    border-top: 0px solid #82AE46;
+
+}
+
+
+.th, a :hover {
+
+  color: #82AE46;
+
 }
