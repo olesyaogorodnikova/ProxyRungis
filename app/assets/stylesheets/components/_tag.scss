@@ -23,3 +23,75 @@
   background-color: #fc7414;
   color: white;
 }
+
+.product-tag a{
+  color:inherit!important;
+  text-decoration: none!important;
+}
+
+#filtering .bg-pink {
+  border: 2px solid #c04ca0;
+  color: #c04ca0!important;
+  background-color:transparent;
+}
+
+#filtering .bg-pink:hover{
+  background-color: #c04ca0;
+  color: white!important;
+}
+
+#filtering .bg-blue {
+  border: 2px solid #3e9cbd;
+  color: #3e9cbd!important;
+  background-color:transparent;
+}
+
+#filtering .bg-blue:hover{
+  background-color: #3e9cbd;
+  color: white!important;
+  cursor: pointer;
+}
+
+#filtering .bg-orange {
+  border: 2px solid #fc7414;
+  color: #fc7414!important;
+  background-color:transparent;
+}
+
+#filtering .bg-orange:hover{
+  background-color: #fc7414;
+  color: white!important;
+}
+
+p.product-tag {
+  width: 180px;
+  margin-left: 10px;
+  text-align: center;
+  padding: 12px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+p.product-tag.bio {
+  width: 74px;
+  padding: 7px;
+}
+
+#label-bio{
+  margin-left: 10px;
+}
+
+.force-bg-pink {
+  color: white !important;
+  background-color: #c04ca0 !important;
+}
+
+.force-bg-blue {
+  color: white !important;
+  background-color: #3e9cbd !important;
+}
+
+.force-bg-orange {
+  color: white !important;
+  background-color: #fc7414 !important;
+}

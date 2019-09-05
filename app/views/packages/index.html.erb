@@ -65,19 +65,24 @@
         <!-- End Modal de Cart -->
 
         <!-- Search form -->
+
         <div id="search-in-packages">
-          <form action="/packages" method="get" id="packages-choices">
-              <select name="category" class="custom-select my-1 mr-sm-2">
-                <option value="" disabled selected>Sélectionner</option>
-                <option value="Fruits" <%= 'selected' if params[:category] == "Fruits" %>>Fruits</option>
-                <option value="Legumes" <%= 'selected' if params[:category] == "Legumes" %>>Légumes</option>
-                <option value="Fruits & legumes" <%= 'selected' if params[:category] == "Fruits & legumes" %>>Fruits & légumes</option>
-                <option value="all" <%= 'selected' if params[:category] == "all" %>>Tous nos paniers</option>
-              </select>
-              <input type="checkbox" name="bio" value=true id="ckeck-box-bio" <%= "checked" if params[:bio] == "true" %>>
-              <label id="label-bio">Bio</label>
-             <button type="submit" class="btn btn-primary my-1 bt-sm" id="button-validation-selection">Valider</button>
-          </form>
+          <div class="d-flex" id="filtering">
+            <p class="product-tag bg-pink" style="<%= "color:white !important;background-color: #c04ca0 !important;" if params[:category] == "Fruits" %>" ><%= link_to "Fruits", packages_path(category: "Fruits")  %></p>
+            <p class="product-tag bg-blue" style="<%= "color:white !important;background-color: #3e9cbd !important;" if params[:category] == "Legumes" %>"><%= link_to "Légumes", packages_path(category: "Legumes") %></p>
+            <p class="product-tag bg-orange" style="<%= "color:white !important;background-color: #fc7414 !important;" if params[:category] == "Fruits & legumes" %>"><%= link_to "Fruits & Légumes", packages_path(category: "Fruits & legumes") %></p>
+            <% if params[:category] == "Fruits" %>
+              <% category = "Fruits" %>
+            <% elsif params[:category] == "Legumes" %>
+              <% category = "Legumes" %>
+            <% elsif params[:category] == "Fruits & legumes" %>
+              <% category = "Fruits & legumes" %>
+            <% else %>
+              <% category = nil %>
+            <% end %>
+            <p class="product-tag bg-bio" style="<%= "color:white !important;background-color: green !important;" if params[:bio] == "true" %>"><%= link_to "Bio", category.nil? ? packages_path(bio: "true") : packages_path(bio: "true", category: category) %></p>
+            </div>
+
         </div>
 
 
@@ -133,8 +138,7 @@
                   <div class="card-product-cover-infos-price-button">
                     <h3><%= money_without_cents(package.price) %><span>€</span></h3>
                     <div class="card-product-cover-infos-button-text">
-                      <i class="fas fa-cart-plus" data-toggle="modal" data-target="#exampleModal-<%= package.id%>"></i>
-                      <h2>Ajouter au panier</h2>
+                      <i class="fas fa-cart-plus" data-toggle="modal" data-target="#exampleModal-<%= package.id%>"><h2>Ajouter au panier</h2></i>
                     </div>
 
                   </div>

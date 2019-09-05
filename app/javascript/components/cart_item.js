@@ -1,55 +1,38 @@
-
-const cardPackages = document.querySelectorAll('#card-product-parent');
-console.log(cardPackages);
-
 const changeCartItemQuantity = () => {
 
-  const buttonDecrease = document.getElementById("button-quantity-decrease");
-  const buttonIncrease = document.getElementById("button-quantity-increase");
-  const currentQuantityBox = document.getElementById("current-quantity");
-  const quantityInput = document.getElementById("cart_item_quantity");
+  const decreaseButtons = document.querySelectorAll("#button-quantity-decrease");
+  const increaseButtons = document.querySelectorAll("#button-quantity-increase");
 
-  // console.log(cardPackage);
+  decreaseButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const packageId = event.currentTarget.dataset.package;
+      const form = document.querySelector(`form[data-package='${packageId}']`);
+      const currentQuantityBox = form.querySelector("#current-quantity");
+      const quantityInput = form.querySelector("#cart_item_quantity");
 
-
-      if (quantityInput) {
-        buttonDecrease.addEventListener("click", (event) => {
-           const currentQuantity = parseInt(currentQuantityBox.innerText);
-           if (currentQuantity - 1 > 0) {
-            currentQuantityBox.innerText = `${currentQuantity - 1}`;
-            quantityInput.value = (currentQuantity - 1);
-           }
-        });
-
-        // console.log(quantityInput);
-        buttonIncrease.addEventListener("click", (event) => {
-          const currentQuantity = parseInt(currentQuantityBox.innerText);
-          currentQuantityBox.innerText = `${currentQuantity + 1}`;
-          quantityInput.value = (currentQuantity + 1);
-          // console.log(quantityInput);
-        });
+      const currentQuantity = parseInt(currentQuantityBox.innerText);
+      if (currentQuantity - 1 > 0) {
+        currentQuantityBox.innerText = `${currentQuantity - 1}`;
+        quantityInput.value = (currentQuantity - 1);
       }
+    });
+  })
+
+  increaseButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+       const packageId = event.currentTarget.dataset.package;
+       const form = document.querySelector(`form[data-package='${packageId}']`);
+       const currentQuantityBox = form.querySelector("#current-quantity");
+       const quantityInput = form.querySelector("#cart_item_quantity");
+
+       const currentQuantity = parseInt(currentQuantityBox.innerText);
+       currentQuantityBox.innerText = `${currentQuantity + 1}`;
+       quantityInput.value = (currentQuantity + 1);
+
+    });
+  });
 }
 
-// cardPackage.forEach((card) => {
-//   console.log(card)
-//   card.addEventListener('click', () => {
-//       changeCartItemQuantity(card);
-//     });
-//   });
-
-
-// for (var i = 0; i < cardPackages.length; ++i) {
-//  var item = cardPackages[i]
-// }
-
-
-cardPackages.forEach((card) => {
-  // let index = 0
-  console.log(card);
-  changeCartItemQuantity(card);
-  // let index = index + card.item(index);
-  });
 
 export { changeCartItemQuantity };
 

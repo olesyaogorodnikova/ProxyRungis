@@ -1,6 +1,7 @@
 class PackagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
   def index
+    # raise
     @packages = Package.all
     @cart = user_cart
     @cart_item = CartItem.new

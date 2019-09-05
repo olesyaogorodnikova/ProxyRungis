@@ -60,8 +60,8 @@ b = Package.new(
     price: 8,
     category: "Fruits & legumes",
     bio: true,
-    number_people:
-        )
+    number_people: 2
+    )
 b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567163928/Fruits%20and%20Vegetables%20Baskets/4d68fd2976639205ef587864e9054977-2018-04-14_deiduz.jpg"
 b.save
 
@@ -110,7 +110,7 @@ b = Package.new(
     description: "8 nectarines jaunes, 450g de framboises, 300g de myrtilles, 1 kg de bananes, 400g de litchis, 3 oranges, 400g de prunes, 2 kiwis",
     price: 20,
     category: "Fruits",
-    bio: false
+    bio: false,
     number_people: 2
         )
 
@@ -194,7 +194,7 @@ b = Package.new(
     description: "2 laitues romaines, 600g de nyrtilles, 7 poivrons, 3 kgs de tomates, 5 navets, 3 kgs de haricots verts, 1 kg d'aubergine, 500g de litchis, 4 oignons doux, 5 melons, 4 betteraves",
     price: 45,
     category: "Fruits & legumes",
-    bio: true
+    bio: true,
     number_people: 5
         )
 
@@ -206,8 +206,8 @@ b = Package.new(
     description: "2 laitues romaines, 600g de nyrtilles, 7 poivrons, 3 kgs de tomates, 5 navets, 3 kgs de haricots verts, 1 kg d'aubergine, 500g de litchis, 4 oignons doux, 5 melons, 4 betteraves",
     price: 40,
     category: "Fruits & legumes",
-    bio: false
-    number_people:
+    bio: false,
+    number_people: 5
         )
 
 b.remote_photo_url = "http://res.cloudinary.com/dhf3phkaa/image/upload/v1567434592/Fruits%20and%20Vegetables%20Baskets/panier-de-fruits-et-legumes-janod_mmb7en.jpg"

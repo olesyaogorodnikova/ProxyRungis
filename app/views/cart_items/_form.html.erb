@@ -1,15 +1,15 @@
-<%= simple_form_for([ package, cart_item ]) do |form| %>
+<%= simple_form_for([ package, cart_item ], html: {data: {package: package.id}}) do |form| %>
   <%#= form.input :quantity, as: :integer, input_html: { min: '0', step: 'any' }, label: 'Indiquez une quantité:' %>
-   <%= form.input :quantity, :as => :hidden %>
+   <%= form.input :quantity, :as => :hidden, input_html: {value: 1} %>
 
   <div class="quantity-form-cart-items">
-    <div class="quantity-form-cart-items-decrease" id="button-quantity-decrease">
+    <div class="quantity-form-cart-items-decrease" id="button-quantity-decrease" data-package="<%= package.id %>">
       <h2>-</h2>
     </div>
 
     <div class="quantity-form-cart-items-first" id="current-quantity">1</div>
 
-    <div class="quantity-form-cart-items-increase" id="button-quantity-increase">
+    <div class="quantity-form-cart-items-increase" id="button-quantity-increase" data-package="<%= package.id %>">
       <h2>+</h2>
     </div>
   </div>
