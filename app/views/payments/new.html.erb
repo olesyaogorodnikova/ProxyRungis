@@ -66,7 +66,7 @@
     <div class="col-md-4" id="cart-table-st">
 
       <div class="card-category content mt-2 pt-2 pb-2" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path'fruit_basket_dfayvi.webp' %>'); height: 400px">
-        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @order.address if !@order.address.nil? %>
+        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @order.address_start if !@order.address_start.nil? %>
         <br><br>le <%= I18n.l(@order.day, format: :long, locale: :'fr') %><br>entre <%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong>.</p>
       </div>
       </div>

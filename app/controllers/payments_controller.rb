@@ -8,7 +8,6 @@ class PaymentsController < ApplicationController
     @order = Order.find(params[:order_id])
     @center = [2.3800903, 48.864922]
 
-
     @markers = {
       lat_starts: @order.ltd_starts,
       lng_starts: @order.lng_starts,
