@@ -1,6 +1,6 @@
 <div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path'vegetables_assort_meiitm.jpg', height: 600, width: 1200, crop: :fill %>')">
   <!-- Tableau -->
-  <h2 class = "mb-5 text-center"> Récapitulatif de commande : </h2>
+  <h2 class = "mb-5 text-center"> Récapitulatif de commande </h2>
   <div id= tableau-recap class="container">
   <div>
     <table class="table table text-center" id="table-modal-shopping-basket">
@@ -30,9 +30,7 @@
     <% end %>
   </table>
  </div>
-              <div class="modal-footer" id="button-validation-cart-item">
-                <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-flat-home btn-sm" %>
-              </div>
+
             </div>
             <!-- Ici c'est le form -->
             <br>
@@ -44,10 +42,10 @@
 
 
         <%= f.input :day, as: :string, placeholder: "Choisir une date", label: "Quel jour récupèrerez-vous votre commande ?", required: true, input_html: {class: "datepicker"} %>
-        <%= f.input :time_start, as: :string, placeholder: "De : 15h00", label: "A partir de quelle heure ?", required: true, input_html: {class: "timepicker"}, wrapper_html: {class: "schedule-input"} %>
-        <%= f.input :time_end, as: :string, placeholder: "A : 17h00", label: "Jusqu'à quelle heure ?", required: true, input_html: {class: "timepicker"}, wrapper_html: {class: "schedule-input"} %>
+        <%= f.input :time_start, as: :string, placeholder: "De : 15h00", label: "A partir de quelle heure ?", required: true, input_html: {class: "timepicker"}, wrapper_html: {class: "schedule-input ml-1"} %>
+        <%= f.input :time_end, as: :string, placeholder: "A : 17h00", label: "Jusqu'à quelle heure ?", required: true, input_html: {class: "timepicker"}, wrapper_html: {class: "schedule-input ml-1 mr-1"} %>
         <%= f.input :address, as: :string, label: "Quelle est votre adresse ?", required: true, placeholder: "16 villa gaudelet" %>
-        <%= f.button :submit, "Valider", class: "btn btn-lg btn-flat-home" %>
+        <%= f.button :submit, "Valider", class: "btn btn-lg btn-flat-home ml-4" %>
       <% end %>
     </div>
   </div>
