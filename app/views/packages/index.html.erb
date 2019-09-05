@@ -7,13 +7,14 @@
 
         <div id="buttons-cart">
           <% unless current_user.cart.cart_items.empty? %>
-            <div id="badge-cart">
-              <button type="button" data-toggle="modal" data-target="#exampleModalCenter" id="button-cart"><span><i class="fa fa-shopping-basket" aria-hidden="true"></i>
-              <p class="badge" id="cart-number-items"><%=current_user.cart.cart_items.count %></p></span></button>
-            </div>
+            <%= link_to orders_path(cart: current_user.cart), method: :post do %>
+              <div id="badge-cart">
+                  <button  id="button-cart"><span><i class="fa fa-shopping-basket"></i>
+                  <p class="badge" id="cart-number-items"><%=current_user.cart.cart_items.count %></p></span></button>
+              </div>
+            <% end %>
           <% end %>
         </div>
-
         <!-- Modal de Cart -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">

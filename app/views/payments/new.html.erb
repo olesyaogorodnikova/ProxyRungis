@@ -1,5 +1,3 @@
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
 
 <div class="container mt-2">
   <div class="row" >
@@ -56,8 +54,9 @@
     <div class="container">
   <div class="ml-2 mt-4 mb-4"
   id="map"
-  data-markers="<%= @marker_address.to_json %>";
-  data-restaurants="<%= @markers.to_json %>";
+  data-markers="<%= @markers.to_json %>";
+  data-markers-address="<%= @markers_address.to_json %>";
+  data-steps="<%= @steps.to_json %>";
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>";
   data-center="<%= @center  %>">
   </div>
@@ -67,8 +66,8 @@
     <div class="col-md-4" id="cart-table-st">
 
       <div class="card-category content mt-2 pt-2 pb-2" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%=  cl_image_path'fruit_basket_dfayvi.webp' %>'); height: 400px">
-        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @order.address if !@order.address.nil? %>
-        <br><br>le <%= I18n.l(@order.day, format: :long, locale: :'fr') %><br>entre <%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong>.</p>
+        <p><strong class ="content">Vous serez livré à moins de 500m de : <%= @order.address_start if !@order.address_start.nil? %>
+        <br><br>le <%= l(@order.day, format: '%d %B %Y', locale: 'fr') %><br>entre <%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong>.</p>
       </div>
       </div>
 
