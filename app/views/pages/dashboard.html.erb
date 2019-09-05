@@ -24,8 +24,7 @@
                   <div class="col-sm-3 hidden-xs"><%= cl_image_tag order.cart.cart_items.first.package.photo, height: 70 %></div>
                   <div class="col-sm-8 ml-3">
                     <p><ins>Numéro de commande: <strong style="color: #82AE46"><%= order.id %></ins></strong></hp>
-                    <p> Livrasion: le <strong><%= order.day.strftime("%-d %B %Y") %><br></strong> Entre <strong><%= order.time_start.strftime("%H:%M") %> et <%= order.time_end.strftime("%H:%M") %></strong> <br> Près de: <strong><%= order.address%></strong></p>
-
+                    <p> Livrasion: le <strong><%= l(order.day, format: '%d %B %Y', locale: 'fr') %><br></strong> Entre <strong><%= order.time_start.strftime("%H:%M") %> et <%= order.time_end.strftime("%H:%M") %></strong> <br> Près de: <strong><%= order.address%></strong></p>
                   </div>
                 </div>
               </td>
