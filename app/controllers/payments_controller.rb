@@ -38,6 +38,7 @@ class PaymentsController < ApplicationController
     )
 
     @order.update(payment: charge.to_json, status: 'Payé')
+    flash[:notice] = "Votre commande a bien été prise en compte!"
     redirect_to dashboard_path
 
   rescue Stripe::CardError => e
