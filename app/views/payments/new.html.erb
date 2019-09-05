@@ -1,5 +1,4 @@
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+
 
 <div class="container mt-2">
   <div class="row" >
@@ -56,8 +55,8 @@
     <div class="container">
   <div class="ml-2 mt-4 mb-4"
   id="map"
-  data-markers="<%= @marker_address.to_json %>";
-  data-restaurants="<%= @markers.to_json %>";
+  data-markers="<%= @markers.to_json %>";
+  data-steps="<%= @steps.to_json %>";
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>";
   data-center="<%= @center  %>">
   </div>
