@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
         image_url: helpers.asset_url('marker_icon.png')
       }
     end
-
   end
 
   def create
@@ -34,8 +33,11 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.restaurant = Restaurant.first
     @order.address_end = Restaurant.first.address
-    @order.update(order_params)
-    redirect_to new_order_payment_path(@order)
+      if @order.update(order_params) && @order.valid?(:update_order)
+      redirect_to new_order_payment_path(@order)
+      else
+        render :edit
+    end
   end
 
   def show

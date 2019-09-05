@@ -20,6 +20,7 @@ class PaymentsController < ApplicationController
       }
     ]
 
+    @order.direction_json
     direction = @order.direction
     @steps = direction["routes"].first["legs"].first["steps"]
 
@@ -60,5 +61,4 @@ class PaymentsController < ApplicationController
     flash[:alert] = e.message
     redirect_to new_order_payment_path(@order)
   end
-
 end
