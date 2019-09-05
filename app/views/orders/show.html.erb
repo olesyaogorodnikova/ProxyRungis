@@ -1,13 +1,13 @@
   <div class="jumbotron text-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('<%= cl_image_path'veggi_lt3fr1.jpg', height: 300, width: 1200, crop: :fill %>'); color:white">
     </div>
-  <div class="container mt-2">
 
-  <div class="row" >
+
+  <div class="row justify-content-center" >
     <div class="col-md-8 mt-2" >
     <%= form_tag order_payments_path(@order) do %>
-      <h2 class ="mb-4" style="color:#82AE46">Détails de la commande: </h2>
+      <h3 class ="mb-4" style="color:#82AE46">Détails de la commande: </h3>
       <div class="container">
-        <table id="cart" class="table table-hover">
+        <table id="dash" class="table table-hover">
           <thead>
             <tr>
               <th style="width:80%"><h5><strong>Produits </strong></h5></th>
@@ -20,12 +20,12 @@
             <tr>
               <td data-th="Product">
                 <div class="row">
-                  <div class="col-sm-3 hidden-xs"><%= cl_image_tag item.package.photo, height: 80 %></div>
+                  <div class="col-sm-3 hidden-xs"><%= cl_image_tag item.package.photo, width: 250 %></div>
                   <div class="col-sm-8 ml-3">
 
-                    <p><strong> <%= item.package.name%></strong> </p>
-                    <p><%= item.package.description%></p>
-                    <p> Livrasion: le <strong><%= @order.day.strftime("%-d %B %Y") %><br></strong> entre <strong><%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong> à <strong><%= @order.address%></strong></p>
+                    <p class="commande"><strong> <%= item.package.name%></strong> </p>
+                    <p class="commande"><%= item.package.description%></p>
+                    <p class="commande"> Livrasion: le <strong><%= @order.day.strftime("%-d %B %Y") %><br></strong> entre <strong><%= @order.time_start.strftime("%H:%M") %> et <%= @order.time_end.strftime("%H:%M") %></strong> à <strong><%= @order.address_end%></strong></p>
 
                   </div>
                 </div>
@@ -36,7 +36,7 @@
                 </div>
               </td>
               <td data-th="Price">
-                <div class="mt-5"><strong style="color: #19AAEE; text-transform: capitalize"><%= @order.status %></strong>
+                <div class="mt-5"><strong style="color: #128EE4; text-transform: capitalize; border:1px solid #128EE4; padding: 0.25rem 0.5rem; border-radius:2px; "><%= @order.status %></strong>
 
                 </div>
               </td>
@@ -55,5 +55,4 @@
       </div>
     <% end %>
 
-</div>
 </div>

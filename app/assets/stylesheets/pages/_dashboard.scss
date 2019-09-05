@@ -141,3 +141,32 @@ img {
   flex-direction: column;
   align-items: center;
 }
+
+#dash {
+  background-color: white;
+  border-radius: 10px;
+  width: 680px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 45px;
+  margin-top:45px;
+}
+
+#dash th  {
+  text-align: left;
+  text-transform: uppercase;
+  color: #82AE46;
+  padding-top: 20px;
+}
+
+#dash h5{
+  font-size: 18px;
+}
+
+.commande{
+  font-size:14px;
+}
+
+.commande-number{
+  font-size:15px;
+}
