@@ -32,6 +32,7 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
+    @order.restaurant = Restaurant.first
     @order.address_end = Restaurant.first.address
     @order.update(order_params)
     redirect_to new_order_payment_path(@order)
