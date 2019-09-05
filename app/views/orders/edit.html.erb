@@ -1,67 +1,42 @@
 <div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url('<%= cl_image_path'vegetables_assort_meiitm.jpg', height: 600, width: 1200, crop: :fill %>')">
-
-
-        <!-- Modal de Cart -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Votre commande en cours:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-
-              <div class="modal-body" id="modal-body-shopping-basket">
-                <table class="table table text-center" id="table-modal-shopping-basket">
-                  <thead>
-                      <th scope="col"></th>
-                      <th scope="col">Nom du panier</th>
-                      <th scope="col">Quantité</th>
-                      <th scope="col">Prix unitaire</th>
-                      <th scope="col">Total</th>
-                  </thead>
-
-                  <% total_price = 0 %>
-                  <% current_user.cart.cart_items.each do |cart_item| %>
-                    <tbody>
-                      <tr data-cart-item-id="<%= cart_item.id %>">
-                        <td></td>
-                       <!--  <td> <%= cl_image_tag cart_item.package.photo %></td> -->
-                        <td><%= cart_item.package.name %></td>
-                        <td><%= cart_item.quantity  %></td>
-                        <td><%= cart_item.package.price %> €</td>
-                         <% price_per_panier = cart_item.package.price * cart_item.quantity %>
-                        <td><%= price_per_panier %> €</td>
-                        <td><%= link_to cart_item_path(cart_item), method: :delete, remote: true do %>
-                              <i class="fa fa-trash destroy_package_cart_item"></i></td>
-                            <% end %>
-                      </tr>
-                      <% total_price += price_per_panier %>
-                    </tbody>
-                  <% end %>
-                </table>
-              </div>
-
+  <!-- Tableau -->
+  <h2 class = "mb-5 text-center"> Récapitulatif de commande : </h2>
+  <div id= tableau-recap class="container">
+  <div>
+    <table class="table table text-center" id="table-modal-shopping-basket">
+      <thead>
+        <th scope="col"></th>
+        <th scope="col">Nom du panier</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Prix unitaire</th>
+         <th scope="col">Total</th>
+    </thead>
+    <% total_price = 0 %>
+    <% current_user.cart.cart_items.each do |cart_itemem| %>
+      <tbody>
+        <tr data-cart-item-id="<%= cart_itemem.id %>">
+           <td></td>
+           <td><%= cart_itemem.package.name %></td>
+           <td><%= cart_itemem.quantity  %></td>
+           <td><%= cart_itemem.package.price %> €</td>
+            <% price_per_panier = cart_itemem.package.price * cart_itemem.quantity %>
+           <td><%= price_per_panier %> €</td>
+           <td><%= link_to cart_item_path(cart_itemem), method: :delete, remote: true do %>
+              <i class="fa fa-trash destroy_package_cart_item"></i></td>
+              <% end %>
+         </tr>
+         <% total_price += price_per_panier %>
+      </tbody>
+    <% end %>
+  </table>
+ </div>
               <div class="modal-footer" id="button-validation-cart-item">
                 <%= link_to "Valider", orders_path(cart: current_user.cart), method: :post, class: "btn btn-flat-home btn-sm" %>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- End Modal de Cart -->
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Ici c'est le form -->
+            <!-- Ici c'est le form -->
+            <br>
+            <br>
   <h2 class = "mb-5 text-center"> Quand souhaitez-vous récupérer votre commande ? </h2>
   <div class="container">
     <div class="form-wrapper" id= "form">
@@ -75,4 +50,8 @@
       <% end %>
     </div>
   </div>
+          </div>
+        </div>
+      </div>
+<!-- End Modal de Cart -->
 </div>
