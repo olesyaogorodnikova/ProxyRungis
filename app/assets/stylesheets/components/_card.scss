@@ -189,9 +189,11 @@ button:focus{
   }
 }
 
+
 .card-product-cover-infos-button-text:hover {
-  color: #940700;
-  cursor: pointer;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.22);
 }
 
 
@@ -420,7 +422,8 @@ button:focus{
 .quantity-form-cart-items-increase:active {
   position:relative;
   top:1px;
-=======
+}
+
 .card-title {
   padding-top: 19px;
   text-left: 0px;
