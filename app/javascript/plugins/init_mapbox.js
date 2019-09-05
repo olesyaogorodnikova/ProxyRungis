@@ -13,44 +13,43 @@ const buildMap = () => {
 };
 
 const addMarkersToMap = (map, markers) => {
-const element = document.createElement('div');
- element.className = 'marker';
- element.style.backgroundColor = 'red';
- element.style.symbol = "rocket";
- element.style.width = '25px';
- element.style.height = '25px';
- element.style.borderRadius = "25px";
-      new mapboxgl.Marker(element)
-        .setLngLat([ markers.lng_starts, markers.lat_starts ])
-        .addTo(map);
-      new mapboxgl.Marker()
-      .setLngLat([ markers.lng_ends, markers.lat_ends ])
-      .addTo(map);
-      // create iti
+  console.log(markers)
+  markers.forEach((marker) => {
+    console.log(marker.infoWindow)
+   const popup_1 = new mapboxgl.Popup().setHTML(marker.infoWindow_1);
+   const popup_2 = new mapboxgl.Popup().setHTML(marker.infoWindow_2);
+   // if (markers.lng_ends) {
+     const element = document.createElement('div');
+     element.className = 'marker';
+     element.style.backgroundColor = 'red';
+     element.style.symbol = "rocket";
+     element.style.width = '25px';
+     element.style.height = '25px';
+     element.style.borderRadius = "25px";
+          new mapboxgl.Marker(element)
+            .setLngLat([ marker.lng_starts, marker.lat_starts ])
+            .setPopup(popup_1)
+            .addTo(map);
+          new mapboxgl.Marker()
+          .setLngLat([ marker.lng_ends, marker.lat_ends ])
+          .setPopup(popup_2)
+          .addTo(map);
+
+        // } else {
+        //   new mapboxgl.Marker()
+        //   .setLngLat([ markers.longitude, markers.latitude ])
+        //   .setPopup(popup)
+        //   .addTo(map);
+        // }
+
+  })
+        // create iti
       const steps = Array.from(JSON.parse(mapElement.dataset.steps)).map(data => data.maneuver.location);
       setTimeout(() => {
         itineraire(map, steps)
       }, 1000)
 
 };
-
-const addMarkerToMapOrderAddress = (map, markers) => {
- markers.forEach((marker) => {
- const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
- const element = document.createElement('div');
- element.className = 'marker';
- element.style.backgroundColor = 'red';
- element.style.symbol = "rocket";
- element.style.width = '25px';
- element.style.height = '25px';
- element.style.borderRadius = "25px";
-   new mapboxgl.Marker(element)
-     .setLngLat([ marker.lng, marker.lat ])
-     .setPopup(popup)
-     .addTo(map);
- });
-};
-
 
 
 
@@ -73,7 +72,9 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
+    // const user_markers = JSON.parse(mapElement.dataset.userMarkers);
     addMarkersToMap(map, markers);
+    // addMarkersToMap(map, user_markers);
     fitMapToMarkers(map, markers);
     if (mapElement.dataset.markersActualPosition && mapElement.dataset.markersActualPosition !== "null") {
       const markersActualPosition =  JSON.parse(mapElement.dataset.markersActualPosition);
