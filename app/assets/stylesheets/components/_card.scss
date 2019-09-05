@@ -223,14 +223,19 @@ button:focus{
  }
 
 #container-index-packages h1 {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #quantity-form-button {
-text-align: center;
+  text-align: center;
+  padding: 0px;
 
   label {
-padding-left: 0;
+    padding-left: 0;
+  }
+  input {
+    color: white;
+    cursor: pointer;
   }
 }
 
@@ -356,27 +361,24 @@ padding-left: 0;
 
 .quantity-form-cart-items {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .quantity-form-cart-items-decrease {
-  background-color: $green;
-  border-radius: 12px;
-  -moz-border-radius:29px;
-  -webkit-border-radius:29px;
-  border-radius:29px;
-  border:1px solid #18ab29;
-  display:inline-block;
-  cursor:pointer;
-  color:black;
-  font-size:14px;
-  font-weight:bold;
-  padding:3px 40px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #2f6627;
-  margin-right: 10px;
-  padding-left: 122px;
+  background-color: #82AE46;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  font-weight: bold;
+  padding-left: 3px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
 }
+
 .quantity-form-cart-items-decrease:hover {
   background-color:#3a781b;
 }
@@ -387,24 +389,21 @@ padding-left: 0;
 
 .quantity-form-cart-items-first {
   flex-grow: 0.3;
+  padding-top: 10px;
 }
 
 .quantity-form-cart-items-increase {
-  background-color: $green;
-   border-radius: 12px;
-  -moz-border-radius:29px;
-  -webkit-border-radius:29px;
-  border-radius:29px;
-  border:1px solid #18ab29;
-  display:inline-block;
-  cursor:pointer;
-  color:black;
-  font-size:14px;
-  font-weight:bold;
-  padding:3px 40px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #2f6627;
-  margin-left: 10px;
+  background-color: #82AE46;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  font-weight: bold;
+  padding-left: 3px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .quantity-form-cart-items-increase:hover {
