@@ -20,8 +20,6 @@ class PaymentsController < ApplicationController
       }
     ]
 
-
-
     direction = @order.direction
     @steps = direction["routes"].first["legs"].first["steps"]
 
