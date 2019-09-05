@@ -7,30 +7,34 @@ class PaymentsController < ApplicationController
 
     @order = Order.find(params[:order_id])
     @center = [2.3800903, 48.864922]
+    restaurant = Restaurant.find(@order.restaurant_id)
 
-    @markers = {
-      lat_starts: @order.ltd_starts,
-      lng_starts: @order.lng_starts,
-      lat_ends: @order.ltd_ends,
-      lng_ends: @order.lng_ends
-    }
+    @markers = [
+      {
+        lat_starts: @order.ltd_starts,
+        lng_starts: @order.lng_starts,
+        lat_ends: @order.ltd_ends,
+        lng_ends: @order.lng_ends,
+        infoWindow_1: render_to_string(partial: "info_window", locals: { order: @order }),
+        infoWindow_2: render_to_string(partial: "info_order_window", locals: { restaurant: restaurant })
+      }
+    ]
 
     direction = @order.direction
     @steps = direction["routes"].first["legs"].first["steps"]
 
     # @marker_address =
     # [{
-    #   lat: @order.latitude,
-    #   lng: @order.longitude,
+    #   lat: @order.lat_starts,
+    #   lng: @order.lng_starts,
     #   infoWindow: render_to_string(partial: "info_window", locals: {ord: @order })
     # }]
-    # @markers = @restaurants.map do |restaurant|
+    # @markers =
     # {
-    #   lat: restaurant.latitude,
-    #   lng: restaurant.longitude,
-    #   infoWindow: render_to_string(partial: "info_order_window", locals: { restaurant: restaurant })
+    #   lat: @order.lat_ends,
+    #   lng: @order.lng_ends,
+    #   # infoWindow: render_to_string(partial: "info_order_window", locals: { restaurant: restaurant })
     # }
-    #end
   end
 
   def create
