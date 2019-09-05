@@ -45,6 +45,7 @@
   .services{
     display: block;
     width: 100%;
+
     // background: darken($white, 0%);
     @include transition(.3s);
     .icon{
@@ -148,4 +149,19 @@
 
 .btn-margin {
   margin-top: 1000px;
+}
+
+
+.ftco-services .services {
+
+    display: block;
+    width: 250px;
+    transition: 0.3s;
+    border: 1px solid #82AE46;
+    height: 250px;
+    border-radius: 10px;
+    padding: 15PX;
+    background: white;
+    box-shadow: 1px 1px 2px gray;
+
 }
