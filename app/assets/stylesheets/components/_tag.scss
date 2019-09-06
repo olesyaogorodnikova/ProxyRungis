@@ -6,7 +6,7 @@
 }
 
 .product-tag.bg-green {
-  background-color: $green;
+  background-color: #82AE45;
   color: white;
 }
 
@@ -61,6 +61,17 @@
 #filtering .bg-orange:hover{
   background-color: #fc7414;
   color: white!important;
+}
+
+#filtering .bg-bio:hover{
+  background-color: #82AE45;
+  color: white!important;
+}
+
+#filtering .bg-bio {
+  border: 2px solid #82AE45;
+  color: #82AE45  !important;
+  background-color:transparent;
 }
 
 p.product-tag {
