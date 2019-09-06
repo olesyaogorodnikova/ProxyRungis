@@ -46,8 +46,8 @@ a = Restaurant.new(
     name: "Au Chat Noir",
     email: "auchatnoir@gmail.com",
     password: "123456",
-    delivery_start_hour: "11:00",
-    delivery_end_hour: "16:00",
+    delivery_start_hour: "17:00",
+    delivery_end_hour: "22:00",
     address: "76 Rue Jean-Pierre Timbaud, 75011 Paris"
     )
 a.save
@@ -156,7 +156,7 @@ b.save
 b = Package.new(
     name: "Panier de fruits du Languedoc",
     description: "1 kg d'abricots, 1 kg de poires, 500g  de framboises, 500g de myrtilles, 4 bananes, 5 kiwis",
-    price: 22,
+    price: 18,
     category: "Fruits",
     bio: true,
     number_people: 3
@@ -167,8 +167,8 @@ b.save
 
 b = Package.new(
     name: "Panier de fruits bio",
-    description: "4 melons, 500g de nirabelles, 3 fruits de la passion, 500g de mûres, 10 nectarines",
-    price: 38,
+    description: "4 melons, 500g de mirabelles, 3 fruits de la passion, 500g de mûres, 10 nectarines",
+    price: 22,
     category: "Fruits",
     bio: true,
     number_people: 3
@@ -180,7 +180,7 @@ b.save
 b = Package.new(
     name: "Grand panier",
     description: "3 laitues romaines, 600g de nyrtilles, 5 poivrons, 2 kgs de tomates, 4 navets, 2kgs de potiron, 2 kgs de haricots verts, 1 kg de raisin blanc",
-    price: 40,
+    price: 30,
     category: "Fruits & legumes",
     bio: false,
     number_people: 5
