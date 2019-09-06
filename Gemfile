@@ -26,6 +26,7 @@ gem 'stripe'
 
 gem 'pg_search'
 gem 'rails-i18n', '~> 5.1'
+gem "algoliasearch-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
