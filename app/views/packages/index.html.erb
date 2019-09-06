@@ -81,7 +81,7 @@
             <% else %>
               <% category = nil %>
             <% end %>
-            <p class="product-tag bg-bio" style="<%= "color:white !important;background-color: green !important;" if params[:bio] == "true" %>"><%= link_to "Bio", category.nil? ? packages_path(bio: "true") : packages_path(bio: "true", category: category) %></p>
+            <p class="product-tag bg-bio" style="<%= "color:white !important;background-color: #82AE45 !important;" if params[:bio] == "true" %>"><%= link_to "Bio", category.nil? ? packages_path(bio: "true") : packages_path(bio: "true", category: category) %></p>
             </div>
 
         </div>
